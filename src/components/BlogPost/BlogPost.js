@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
 import FlexList from '../FlexList';
 import Bio from '../Bio';
@@ -15,24 +16,23 @@ const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
     <h1>{ post.frontmatter.title }</h1>
     <p
       data-test="postDate"
-      style={ {
-        ...scale( -1 / 5 ), 
-        display: `block`,
-        marginBottom: rhythm( 1 ),
-        marginTop: rhythm( -1 ),
-      } }
+      css={ css`
+        display: block;
+        margin-bottom: 1.5em;
+        margin-top: 1em;
+      ` }
     >
       { post.frontmatter.date }
     </p>
     <MDXRenderer data-test="postContent">{ post.code.body }</MDXRenderer>
     <hr
-      style={ {
-        marginBottom: rhythm( 1 ),
-      } }
+      css={ css`
+        margin-bottom: 1.5em;
+      ` }
     />
     <Bio />
 
-    <FlexList>
+    <FlexList spacing="space-between">
       <li>
         { previous && (
           <Link data-test="previousLink" to={ previous.fields.slug } rel="prev">

@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 const Title = ( { title } ) => (
 	<Link
-		style={ {
-			boxShadow: `none`,
-			textDecoration: `none`,
-			color: `inherit`,
-		} }
-			to={ `/` }
-		>
+		css={ css`
+			box-shadow: none;
+			color: inherit;
+			text-decoration: none;
+		` }
+		to={ `/` }
+	>
 		{ title }
 	</Link>
 );

@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
 import { rhythm } from '../../utils/typography';
 
 const Post = ( { date, excerpt, slug, title } ) => (
 	<div key={ slug }>
-		<h3
-			style={ {
-				marginBottom: rhythm( 1 / 4 ),
-			} }
+		<h2
+			css={ css`
+				margin-bottom: 0;
+			` }
 		>
-			<Link style={ { boxShadow: `none` } } to={ slug }>
+			<Link 
+				css={ css`
+					box-shadow: none;
+				` }
+				to={ slug }
+			>
 				{ title }
 			</Link>
-		</h3>
+		</h2>
 		<small data-test="postDate">{ date }</small>
 		<p data-test="postExcerpt" dangerouslySetInnerHTML={ { __html: excerpt } } />
 	</div>

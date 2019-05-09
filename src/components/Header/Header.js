@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
 import Title from '../Title';
 import Bio from '../Bio';
@@ -13,11 +14,10 @@ const Header = ( { location, title } ) => {
 	if( isHome ) {
 		output = (
 			<h1
-				style={ {
-					...scale( 1.5 ),
-					marginBottom: rhythm( 1.5 ),
-					marginTop: 0,
-				} }
+				css={ css`
+					margin-bottom: 0;
+					margin-top: 0;
+				` }
 			>
 				<Title title={ title } />
 			</h1>
@@ -25,11 +25,11 @@ const Header = ( { location, title } ) => {
 	} else {
 		output = (
 			<p
-				style={ {
-					fontFamily: `Montserrat, sans-serif`,
-					marginTop: 0,
-					marginBottom: rhythm( -1 ),
-				} }
+				css={ css`
+					font-family: Montserrat, sans-serif;
+					margin-top: 0;
+					margin-bottom: 0;
+				` }
 			>
 				<Title title={ title } />
 			</p>
@@ -39,11 +39,11 @@ const Header = ( { location, title } ) => {
 	return (
 		<header>
 			<div
-				style={ {
-					alignItems: 'center',
-					display: 'flex',
-					justifyContent: 'space-between',
-				 } }
+				 css={ css`
+					align-items: center;
+					display: flex;
+					justify-content: space-between;
+				` }
 			>
 				{ output }
 			</div>

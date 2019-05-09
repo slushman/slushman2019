@@ -1,27 +1,31 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
-
-import { rhythm } from '../../utils/typography';
+import { css } from '@emotion/core';
 
 const Bio = ( { author, avatar, social } ) => (
   <div
-    style={ {
-      display: `flex`,
-      marginBottom: rhythm( 2.5 ),
-    } }
+    css={ css`
+      display: flex;
+      margin-bottom: ${ wrapMargBottom };
+    ` }
   >
     <Image
-      fixed={ avatar.childImageSharp.fixed }
       alt={ author }
-      style={ {
-        marginRight: rhythm( 1 / 2 ),
-        marginBottom: 0,
-        minWidth: 50,
-        borderRadius: `100%`,
-      } }
+      css={ css`
+        margin-right: 0.5em;
+        margin-bottom: 0;
+        min-width: 50px;
+        border-radius: 100%;
+      ` }
+      fixed={ avatar.childImageSharp.fixed }
     />
-    <p>
+    <p
+      css={ css`
+        margin-bottom: 0;
+        margin-top: 0;
+      ` }
+    >
       Written by <strong>{ author }</strong> who lives and works in
       Minneapolis building silly things.
       { ` ` }
