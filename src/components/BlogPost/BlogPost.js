@@ -8,7 +8,6 @@ import FlexList from '../FlexList';
 import Bio from '../Bio';
 import Layout from '../Layout';
 import SEO from '../SEO';
-import { rhythm, scale } from '../../utils/typography';
 
 const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
   <Layout location={ location } title={ siteTitle }>

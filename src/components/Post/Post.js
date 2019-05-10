@@ -3,8 +3,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
-import { rhythm } from '../../utils/typography';
-
 const Post = ( { date, excerpt, slug, title } ) => (
 	<div key={ slug }>
 		<h2

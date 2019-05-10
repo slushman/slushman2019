@@ -5,27 +5,18 @@ import Bio from './Bio';
 
 const QueryBio = () => {
   const data = useStaticQuery( bioQuery );
-  const { author, social } = data.site.siteMetadata;
 
   return (
-    <Bio author={author} avatar={ data.avatar } social={ social } />
+    <Bio avatar={ data.avatar } />
   )
 };
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/cjw-caricature.jpg/" }) {
       childImageSharp {
         fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        author
-        social {
-          twitter
         }
       }
     }

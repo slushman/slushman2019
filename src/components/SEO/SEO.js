@@ -2,16 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-const SEO = ( { author, description, lang, meta, metaTitle, keywords, title } ) => {
+import useSiteMetadata from '../../hooks/UseSiteMetadata';
+
+const SEO = ( { description, lang, meta, keywords, title } ) => {
+  const { author, siteDescription, siteTitle } = useSiteMetadata();
+  const useDescription = description || siteDescription;
+
   return (
     <Helmet
       htmlAttributes={ { lang } }
       title={ title }
-      titleTemplate={ `%s | ${ metaTitle }` }
+      titleTemplate={ `%s | ${ siteTitle }` }
       meta={ [
         {
           name: `description`,
-          content: description,
+          content: useDescription,
         },
         {
           property: `og:title`,
@@ -19,7 +24,7 @@ const SEO = ( { author, description, lang, meta, metaTitle, keywords, title } ) 
         },
         {
           property: `og:description`,
-          content: description,
+          content: useDescription,
         },
         {
           property: `og:type`,
@@ -39,7 +44,7 @@ const SEO = ( { author, description, lang, meta, metaTitle, keywords, title } ) 
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: useDescription,
         },
       ]
         .concat(
@@ -56,11 +61,9 @@ const SEO = ( { author, description, lang, meta, metaTitle, keywords, title } ) 
 };
 
 SEO.propTypes = {
-  author: PropTypes.string,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  metaTitle: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };

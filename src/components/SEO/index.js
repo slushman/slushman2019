@@ -1,1 +1,1 @@
-export { default } from './QuerySEO';
+export { default } from './SEO';

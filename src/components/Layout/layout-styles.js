@@ -1,12 +1,12 @@
 import React from 'react';
-import { rhythm } from '../../utils/typography';
+import { css } from '@emotion/core';
 
-const contentWidth = {
-	marginLeft: 'auto',
-	marginRight: 'auto',
-	maxWidth: rhythm( 24 ),
-	padding: `${ rhythm( 1.5 ) } ${ rhythm( 3 / 4 ) }`,
-};
+const contentWidth = css`
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 42rem;
+	padding: 0.75em;
+`;
 
 export {
 	contentWidth,

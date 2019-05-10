@@ -4,7 +4,6 @@ import { css } from '@emotion/core';
 
 import Title from '../Title';
 import Bio from '../Bio';
-import { rhythm, scale } from '../../utils/typography';
 
 const Header = ( { location, title } ) => {
 	const rootPath = `${ __PATH_PREFIX__ }/`;

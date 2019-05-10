@@ -1,12 +1,15 @@
+const config = require("./data/siteConfig");
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
-    social: {
-      twitter: `mattinthecouch`,
-    },
+    author: config.siteAuthor,
+    siteDescription: config.siteDescription,
+    siteLogo: config.siteLogo,
+    siteUrl: config.siteUrl,
+    title: config.siteTitle,
+    userAvatar: config.userAvatar,
+    userLinks: config.userLinks,
+    userLocation: config.userLocation
   },
   plugins: [
     {
@@ -75,13 +78,13 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ( { query: { site, allMdx } } ) => {
+            serialize: ( { query: { allMdx } } ) => {
               return allMdx.edges.map( edge => {
                 return Object.assign( {}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   data: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: config.siteUrl + edge.node.fields.slug,
+                  guid: config.siteUrl + edge.node.fields.slug,
                   custom_elements: [ { 'content:encoded': edge.node.code.boy } ],
                 } )
               } )

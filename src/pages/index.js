@@ -2,16 +2,17 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import BlogIndex from './BlogIndex';
+import useSiteMetadata from '../hooks/UseSiteMetadata';
 
 const QueryBlogIndex = ( { data, location } ) => {
-  const siteTitle = data.site.siteMetadata.title;
+  const { title } = useSiteMetadata();
   const posts = data.allMdx.edges;
 
   return (
 		<BlogIndex
 			location={ location }
 			posts={ posts }
-			siteTitle={ siteTitle }
+			siteTitle={ title }
 		/>
   )
 };
@@ -20,11 +21,6 @@ export default QueryBlogIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

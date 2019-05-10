@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "slushman2019",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Chris Wilcoxson <chris@slushman.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/slushman/slushman2019/issues"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
