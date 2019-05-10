@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
+import Toggle from 'react-toggle';
+import 'react-toggle/style.css';
 
 import Title from '../Title';
 import Bio from '../Bio';
@@ -9,6 +11,14 @@ const Header = ( { location, title } ) => {
 	const rootPath = `${ __PATH_PREFIX__ }/`;
 	const isHome = location.pathname === rootPath;
 	let output = '';
+
+	const [ theme, setTheme ] = React.useState( window.__theme );
+
+	React.useEffect( () => {
+		window.__onThemeChange = () => {
+			setTheme( window.__theme );
+		}
+	} );
 
 	if( isHome ) {
 		output = (
@@ -45,6 +55,25 @@ const Header = ( { location, title } ) => {
 				` }
 			>
 				{ output }
+				<label>
+					<span
+						css={ css`
+							margin-right: 0.5em;
+							vertical-align: middle;
+						` }
+					>Dark mode: { theme.isDark ? 'on' : 'off' }</span>
+					<Toggle
+						css={ css`
+							vertical-align: middle;
+						` }
+						checked={ theme === 'dark' }
+						onChange={ event =>
+							window.__setPreferredTheme(
+								event.target.checked ? 'dark' : 'light'
+							)
+						}
+					/>
+				</label>
 			</div>
 		{ isHome && <Bio isHome={ isHome } /> }
 		</header>

@@ -8,6 +8,7 @@ import FlexList from '../FlexList';
 import Bio from '../Bio';
 import Layout from '../Layout';
 import SEO from '../SEO';
+import Shurls from '../Shurls';
 
 const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
   <Layout location={ location } title={ siteTitle }>
@@ -24,6 +25,7 @@ const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
       { post.frontmatter.date }
     </p>
     <MDXRenderer data-test="postContent">{ post.code.body }</MDXRenderer>
+    <Shurls postNode={ post } />
     <hr
       css={ css`
         margin-bottom: 1.5em;

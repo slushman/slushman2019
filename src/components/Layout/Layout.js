@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 
 import Header from '../Header';
 import { contentWidth } from './layout-styles';
+import GlobalStyles from './GlobalStyles';
 
 const Layout = ( { children, location, title } ) => {
   return (
@@ -12,9 +13,9 @@ const Layout = ( { children, location, title } ) => {
         ${ contentWidth }
         background-color: var( --bgColor );
         color: var( --textColor );
-        transition: background-color 0.5s ease, color 0.5s ease;
       ` }
     >
+      <GlobalStyles />
       <Header
         location={ location }
         title={ title }
