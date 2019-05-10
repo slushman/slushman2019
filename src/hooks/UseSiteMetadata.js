@@ -11,7 +11,6 @@ const useSiteMetadata = () => {
 						siteLogo
 						siteUrl
 						title
-						userAvatar
 						userLinks {
 							facebook {
 								label
