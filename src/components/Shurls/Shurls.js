@@ -80,7 +80,7 @@ const Shurls = ( { postNode, rounded } ) => {
 
 Shurls.propTypes = {
 	postNode: PropTypes.object.isRequired,
-	rounded: PropTypes.boolean,
+	rounded: PropTypes.bool,
 };
 
 Shurls.defaultProps = {

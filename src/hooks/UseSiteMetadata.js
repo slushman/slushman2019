@@ -11,28 +11,6 @@ const useSiteMetadata = () => {
 						siteLogo
 						siteUrl
 						title
-						userLinks {
-							facebook {
-								label
-								url
-								iconClassName
-							}
-							github {
-								label
-								url
-								iconClassName
-							}
-							twitter {
-								label
-								url
-								iconClassName
-							}
-							email {
-								label
-								url
-								iconClassName
-							}
-						}
 						userLocation
 					}
 				}

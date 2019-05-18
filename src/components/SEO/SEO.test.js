@@ -7,6 +7,8 @@ import SEO from './SEO';
  */
 
 const defaultProps = {
+	author: '',
+	siteTitle: '',
 	title: '',
 };
 const factory = shallowFactory( SEO, defaultProps );
@@ -18,7 +20,7 @@ describe('<SEO />', () => {
 		expect( wrapper.exists() ).toBe( true );
 		expect( wrapper.prop('htmlAttributes').lang ).toBe( 'en' );
 		expect( wrapper.prop('title') ).toBe( defaultProps.title );
-		expect( wrapper.prop('titleTemplate') ).toBe( `%s | undefined` );
+		expect( wrapper.prop('titleTemplate') ).toBe( `%s | ${ defaultProps.siteTitle }` );
 	} );
 
 	describe( 'when given a lang value', () => {
@@ -45,12 +47,12 @@ describe('<SEO />', () => {
 
 	describe( 'when given a metaTitle', () => {
 		it( 'renders with the expected metaTitle', () => {
-			const givenMetaTitle = 'lbkjbjsfbv';
+			const givenSiteTitle = 'lbkjbjsfbv';
 			const wrapper = factory( {
-				metaTitle: givenMetaTitle,
+				siteTitle: givenSiteTitle,
 			} );
 
-			expect( wrapper.prop('titleTemplate') ).toBe( `%s | ${ givenMetaTitle }` );
+			expect( wrapper.prop('titleTemplate') ).toBe( `%s | ${ givenSiteTitle }` );
 		} );
 	} );
 

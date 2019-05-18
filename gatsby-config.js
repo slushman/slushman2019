@@ -1,22 +1,18 @@
-const config = require("./data/siteConfig");
-
 module.exports = {
   siteMetadata: {
-    author: config.siteAuthor,
-    siteDescription: config.siteDescription,
-    siteLogo: config.siteLogo,
-    siteUrl: config.siteUrl,
-    title: config.siteTitle,
-    userAvatar: config.userAvatar,
-    userLinks: config.userLinks,
-    userLocation: config.userLocation
+    author: 'Chris Wilcoxson',
+    siteDescription: 'Software engineer at Church Community Builder in Colorado Springs, CO specializing in React, React Native, and PHP.',
+    siteLogo: '/content/assets/slushman-animated.svg',
+    siteUrl: 'https://www.slushman.com',
+    title: 'Slushman',
+    userLocation: 'Colorado Springs, CO',
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/src/posts`,
+        name: 'posts',
       },
     },
     {
@@ -83,8 +79,8 @@ module.exports = {
                 return Object.assign( {}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   data: edge.node.frontmatter.date,
-                  url: config.siteUrl + edge.node.fields.slug,
-                  guid: config.siteUrl + edge.node.fields.slug,
+                  url: 'https://www.slushman.com' + edge.node.fields.slug,
+                  guid: 'https://www.slushman.com' + edge.node.fields.slug,
                   custom_elements: [ { 'content:encoded': edge.node.code.boy } ],
                 } )
               } )

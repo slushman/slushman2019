@@ -14,9 +14,6 @@ const defaultProps = {
 			},
 		}
 	},
-	social: {
-		twitter: 'cjwilcoxson',
-	}
 };
 const factory = shallowFactory( Bio, defaultProps );
 
@@ -28,7 +25,6 @@ describe('<Bio />', () => {
 
 		expect( wrapper.exists() ).toBe( true );
 		expect( foundImage.prop( 'alt' ) ).toBe( defaultProps.author );
-		expect( foundTwitter.prop( 'href' ) ).toBe( `https://twitter.com/${ defaultProps.social.twitter }` );
 	} );
 
 	describe( 'when given an author', () => {
@@ -38,21 +34,8 @@ describe('<Bio />', () => {
 				author: givenAuthor,
 			} );
 			const foundImage = wrapper.find( 'Image' );
-			const foundTwitter = wrapper.find( 'a' );
 
 			expect( foundImage.prop( 'alt' ) ).toBe( givenAuthor );
-		} );
-	} );
-
-	describe( 'when given a twitter username', () => {
-		it( 'renders the Twitter link with the given twitter username', () => {
-			const givenAuthor= 'deankoontz';
-			const wrapper = factory( {
-				author: givenAuthor,
-			} );
-			const foundTwitter = wrapper.find( 'a' );
-
-			expect( foundTwitter.prop( 'href' ) ).toBe( `https://twitter.com/${ defaultProps.social.twitter }` );
 		} );
 	} );
 

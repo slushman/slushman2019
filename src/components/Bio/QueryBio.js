@@ -1,13 +1,15 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import useSiteMetadata from '../../hooks/UseSiteMetadata';
 import Bio from './Bio';
 
 const QueryBio = () => {
   const data = useStaticQuery( bioQuery );
+  const { author } = useSiteMetadata();
 
   return (
-    <Bio avatar={ data.avatar } />
+    <Bio author={ author } avatar={ data.avatar } />
   )
 };
 

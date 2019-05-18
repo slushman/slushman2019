@@ -9,8 +9,15 @@ import Bio from '../Bio';
 import Layout from '../Layout';
 import SEO from '../SEO';
 import Shurls from '../Shurls';
+import Gallery from '../Gallery';
+import Codepen from '../Codepen';
 
-const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
+const mdxComponents = {
+  Codepen,
+  Gallery,
+};
+
+const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
   <Layout location={ location } title={ siteTitle }>
     <SEO title={ post.frontmatter.title } description={ post.excerpt } />
     <h1>{ post.frontmatter.title }</h1>
@@ -24,7 +31,12 @@ const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
     >
       { post.frontmatter.date }
     </p>
-    <MDXRenderer data-test="postContent">{ post.code.body }</MDXRenderer>
+    <MDXRenderer
+      data-test="postContent"
+      scope={ { ...mdxComponents, ...scope } }
+    >
+      { post.code.body }
+    </MDXRenderer>
     <Shurls postNode={ post } />
     <hr
       css={ css`
@@ -54,10 +66,17 @@ const BlogPost = ( { location, next, post, previous, siteTitle } ) => (
 
 BlogPost.propTypes = {
   location: PropTypes.object.isRequired,
-  next: PropTypes.object.isRequired,
+  next: PropTypes.object,
   post: PropTypes.object.isRequired,
-  previous: PropTypes.object.isRequired,
+  previous: PropTypes.object,
+  scope: PropTypes.object,
   siteTitle: PropTypes.string.isRequired,
+};
+
+BlogPost.defaultProps = {
+  next: {},
+  previous: {},
+  scope: {},
 };
 
 export default BlogPost;

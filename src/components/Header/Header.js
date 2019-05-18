@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 
+import { contentWidth } from '../Layout/layout-styles';
 import Title from '../Title';
 import Bio from '../Bio';
 
@@ -49,6 +50,7 @@ const Header = ( { location, title } ) => {
 		<header>
 			<div
 				 css={ css`
+					${ contentWidth }
 					align-items: center;
 					display: flex;
 					justify-content: space-between;
@@ -61,7 +63,7 @@ const Header = ( { location, title } ) => {
 							margin-right: 0.5em;
 							vertical-align: middle;
 						` }
-					>Dark mode: { theme.isDark ? 'on' : 'off' }</span>
+					>Dark mode: { theme === 'dark' ? 'on' : 'off' }</span>
 					<Toggle
 						css={ css`
 							vertical-align: middle;
@@ -81,8 +83,13 @@ const Header = ( { location, title } ) => {
 }
 
 Header.propTypes = {
+	depWindowTheme: PropTypes.string,
 	location: PropTypes.object.isRequired,
 	title: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+	depWindowTheme: '',
 };
 
 export default Header;
