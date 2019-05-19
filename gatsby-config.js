@@ -2,9 +2,8 @@ module.exports = {
   siteMetadata: {
     author: 'Chris Wilcoxson',
     siteDescription: 'Software engineer at Church Community Builder in Colorado Springs, CO specializing in React, React Native, and PHP.',
-    siteLogo: '/content/assets/slushman-animated.svg',
     siteUrl: 'https://www.slushman.com',
-    title: 'Slushman',
+    siteTitle: 'Slushman',
     userLocation: 'Colorado Springs, CO',
   },
   plugins: [
@@ -65,7 +64,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                title
+                siteTitle
                 description
                 siteUrl
               }

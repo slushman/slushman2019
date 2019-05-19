@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
 
 import FlexList from '../FlexList';
 import Bio from '../Bio';
@@ -12,6 +11,11 @@ import Shurls from '../Shurls';
 import Gallery from '../Gallery';
 import Codepen from '../Codepen';
 
+import {
+  postDate,
+  postDivider,
+} from './blogpost-styles';
+
 const mdxComponents = {
   Codepen,
   Gallery,
@@ -19,15 +23,11 @@ const mdxComponents = {
 
 const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
   <Layout location={ location } title={ siteTitle }>
-    <SEO title={ post.frontmatter.title } description={ post.excerpt } />
+    <SEO description={ post.excerpt } title={ post.frontmatter.title } />
     <h1>{ post.frontmatter.title }</h1>
     <p
+      css={ postDate }
       data-test="postDate"
-      css={ css`
-        display: block;
-        margin-bottom: 1.5em;
-        margin-top: 1em;
-      ` }
     >
       { post.frontmatter.date }
     </p>
@@ -38,24 +38,28 @@ const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
       { post.code.body }
     </MDXRenderer>
     <Shurls postNode={ post } />
-    <hr
-      css={ css`
-        margin-bottom: 1.5em;
-      ` }
-    />
+    <hr css={ postDivider } />
     <Bio />
 
     <FlexList spacing="space-between">
       <li>
         { previous && (
-          <Link data-test="previousLink" to={ previous.fields.slug } rel="prev">
+          <Link
+            data-test="previousLink"
+            rel="prev"
+            to={ previous.fields.slug }
+          >
             ← { previous.frontmatter.title }
           </Link>
         ) }
       </li>
       <li>
         { next && (
-          <Link data-test="nextLink" to={ next.fields.slug } rel="next">
+          <Link
+            data-test="nextLink"
+            rel="next"
+            to={ next.fields.slug }
+          >
             { next.frontmatter.title } →
           </Link>
         ) }

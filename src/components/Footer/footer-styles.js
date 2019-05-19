@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import { contentWidth } from '../Layout/layout-styles';
 
 export const siteFooter = css`
 	--flexwrap: wrap;
@@ -16,6 +17,10 @@ export const siteFooter = css`
 	@media screen and ( min-width: 550px) {
 		--flexwrap: inherit;
 	}
+`;
+
+export const copyWrap = css`
+	${ contentWidth }
 `;
 
 export const copyright = css`

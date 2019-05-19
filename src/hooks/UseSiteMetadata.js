@@ -8,9 +8,8 @@ const useSiteMetadata = () => {
 					siteMetadata {
 						author
 						siteDescription
-						siteLogo
 						siteUrl
-						title
+						siteTitle
 						userLocation
 					}
 				}

@@ -1,17 +1,16 @@
 import { css } from '@emotion/core';
 
-const link = css`
+export const link = css`
 	display: block;
 `;
 
-const round = css`
+export const round = css`
 	align-items: center;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
 `;
 
-export {
-	round,
-	link,
-};
+export const shurlWrap = css`
+	margin-bottom: 1.5em;
+`;

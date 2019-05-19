@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
+import {
+	frameWrap,
+	StyledFigure,
+	StyledIframe
+} from './codepen-styles';
+
 const Codepen = ( {
 	caption,
 	height,
@@ -16,30 +22,11 @@ const Codepen = ( {
   const pen  = `${ userUrl }/pen/${ id }/`;
 
   return (
-		<figure
-			css={ css`
-				height: ${ height };
-				margin: 0;
-			` }
-		>
-			<div
-				css={ css`
-					height: 0;
-					padding-bottom: 56.25%;
-					position: relative;
-					width: 100%;
-				` }
-			>
-				<iframe
+		<StyledFigure height={ height }>
+			<div css={ frameWrap }>
+				<StyledIframe
 					allowFullScreen={true} 
 					allowtransparency={true}
-					css={ css`
-						height: ${ height };
-						left: 0;
-						position: absolute;
-						top: 0;
-						width: ${ width };
-					` }
 					frameBorder="no" 
 					height={ height } 
 					scrolling="no" 
@@ -47,10 +34,10 @@ const Codepen = ( {
 					width={ width } 
 				>
 					<a href={ pen }>See this pen</a> by { user } (<a href={ userUrl }>@{ user }</a>) on <a href='http://codepen.io'>CodePen</a>.
-				</iframe>
+				</StyledIframe>
 			</div>
 			{ caption && <figcaption>{ caption }</figcaption> }
-		</figure>
+		</StyledFigure>
   )
 };
 

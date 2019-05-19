@@ -9,7 +9,12 @@ import IconPinterest from './Pinterest';
 import IconStumbleupon from './Stumbleupon';
 import IconTumblr from './Tumblr';
 import IconTwitter from './Twitter';
-import * as styles from './shurls-styles';
+
+import {
+	link,
+	round,
+	shurlWrap,
+} from './shurls-styles';
 
 const Shurls = ( { postNode, rounded } ) => {
 	const post = postNode.frontmatter;
@@ -17,7 +22,7 @@ const Shurls = ( { postNode, rounded } ) => {
 	const currentTitle = escape( post.title );
 	const currentExcerpt = escape( post.excerpt );
 	const currentMedia = post.media ? post.media : null;
-	const linkStyles = rounded ? [ styles.round, styles.link ] : [ styles.link ];
+	const linkStyles = rounded ? [ round, link ] : [ link ];
 	const shurlLinks = [
 		{
 			url: `mailto:?subject=${ currentTitle }&body=${ currentExcerpt }`,
@@ -50,25 +55,19 @@ const Shurls = ( { postNode, rounded } ) => {
 	];
 
 	return (
-		<section
-			css={ css`
-				margin-bottom: 1.5em;
-			` }
-		>
+		<section css={ shurlWrap }>
 			<h2>Share this post!</h2>
 			<FlexList spacing="space-around">
 				{
 					shurlLinks.map( ( link, i ) => (
-						<li
-							key={ i }
-						>
+						<li key={ i }>
 							<a
 								className="link-shurl"
 								css={ linkStyles }
 								href={ link.url }
 								target="_blank"
 							>
-							{ link.component }
+								{ link.component }
 							</a>
 						</li>
 					) )

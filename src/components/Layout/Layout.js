@@ -4,26 +4,23 @@ import { css } from '@emotion/core';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import { contentWidth } from './layout-styles';
 import GlobalStyles from './GlobalStyles';
+
+import {
+  contentWidth,
+  layoutWrap,
+  styledMain,
+} from './layout-styles';
 
 const Layout = ( { children, location, title } ) => {
   return (
-    <div
-      css={ css`
-        background-color: var( --bgColor );
-        color: var( --textColor );
-      ` }
-    >
+    <div css={ layoutWrap }>
       <GlobalStyles />
       <Header
         location={ location }
         title={ title }
       />
-      <main 
-      css={ css`
-        ${ contentWidth }
-      ` }>
+      <main css={ styledMain }>
         { children }
       </main>
       <Footer />

@@ -5,7 +5,7 @@ import BlogPost from '../components/BlogPost';
 import useSiteMetadata from '../hooks/UseSiteMetadata';
 
 const BlogPostTemplate = ( { data, location, pageContext } ) => {
-  const { title: siteTitle } = useSiteMetadata();
+  const { siteTitle } = useSiteMetadata();
 
   return (
     <BlogPost

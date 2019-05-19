@@ -1,6 +1,3 @@
-import Image from 'gatsby-image';
-import Codepen from '../../components/Codepen';
-
 ---
 date: "2018-05-23"
 title: "Code Sample Styling"

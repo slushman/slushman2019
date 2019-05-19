@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 
-import { contentWidth } from '../Layout/layout-styles';
 import Title from '../Title';
 import Bio from '../Bio';
+import {
+	header,
+	headerWrap,
+	heading1,
+	titleP,
+	toggle,
+	toggleLabel,
+} from './header-styles';
 
 const Header = ( { location, title } ) => {
 	const rootPath = `${ __PATH_PREFIX__ }/`;
@@ -23,52 +29,27 @@ const Header = ( { location, title } ) => {
 
 	if( isHome ) {
 		output = (
-			<h1
-				css={ css`
-					margin-bottom: 0;
-					margin-top: 0;
-				` }
-			>
+			<h1 css={ heading1 }>
 				<Title title={ title } />
 			</h1>
 		);
 	} else {
 		output = (
-			<p
-				css={ css`
-					font-family: Montserrat, sans-serif;
-					margin-top: 0;
-					margin-bottom: 0;
-				` }
-			>
+			<p css={ titleP }>
 				<Title title={ title } />
 			</p>
 		)
 	};
 
 	return (
-		<header>
-			<div
-				 css={ css`
-					${ contentWidth }
-					align-items: center;
-					display: flex;
-					justify-content: space-between;
-				` }
-			>
+		<header css={ header }>
+			<div css={ headerWrap }>
 				{ output }
 				<label>
-					<span
-						css={ css`
-							margin-right: 0.5em;
-							vertical-align: middle;
-						` }
-					>Dark mode: { theme === 'dark' ? 'on' : 'off' }</span>
+					<span css={ toggleLabel }>Dark mode: { theme === 'dark' ? 'on' : 'off' }</span>
 					<Toggle
-						css={ css`
-							vertical-align: middle;
-						` }
 						checked={ theme === 'dark' }
+						css={ toggle }
 						onChange={ event =>
 							window.__setPreferredTheme(
 								event.target.checked ? 'dark' : 'light'
@@ -77,19 +58,14 @@ const Header = ( { location, title } ) => {
 					/>
 				</label>
 			</div>
-		{ isHome && <Bio isHome={ isHome } /> }
+		{ isHome && <Bio /> }
 		</header>
 	);
 }
 
 Header.propTypes = {
-	depWindowTheme: PropTypes.string,
 	location: PropTypes.object.isRequired,
 	title: PropTypes.string.isRequired,
-};
-
-Header.defaultProps = {
-	depWindowTheme: '',
 };
 
 export default Header;

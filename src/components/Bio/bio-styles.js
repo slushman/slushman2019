@@ -1,18 +1,17 @@
 import { css } from '@emotion/core';
 
-export const socialWrap = css`
-	--flex: 0 0 100%;
-	--order: 1;
+export const avatarStyle = css`
+	border-radius: 100%;
+	margin-bottom: 0;
+	margin-right: 0.5em;
+	min-width: 50px;
+`;
 
-	flex: var(--flex);
-	order: var(--order );
+export const bioDescription = css`
+	margin-bottom: 0;
+  margin-top: 0;
+`;
 
-	@media screen and ( min-width: 550px) {
-		--flex: 1;
-		--order: 2;
-	}
-
-	svg {
-		fill: var(--color-light );
-	}
+export const bioWrap = css`
+	display: flex;
 `;

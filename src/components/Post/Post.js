@@ -3,17 +3,16 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 
+import {
+	postHeading2,
+	postLink,
+} from './post-styles';
+
 const Post = ( { date, excerpt, slug, title } ) => (
 	<div key={ slug }>
-		<h2
-			css={ css`
-				margin-bottom: 0;
-			` }
-		>
+		<h2 css={ postHeading2 }>
 			<Link 
-				css={ css`
-					box-shadow: none;
-				` }
+				css={ postLink }
 				to={ slug }
 			>
 				{ title }

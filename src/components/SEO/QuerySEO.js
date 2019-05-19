@@ -8,7 +8,8 @@ import SEO from './SEO';
 const QuerySEO = ( { description, keywords, lang, meta, title } ) => {
   const data = useStaticQuery( seoQuery );
 	const { author, siteDescription, siteTitle } = useSiteMetadata();
-	const useDescription = description || siteDescription;
+  const useDescription = description || siteDescription;
+  console.log(siteTitle);
 
   return (
 		<SEO
@@ -37,12 +38,10 @@ const seoQuery = graphql`
 `;
 
 SEO.propTypes = {
-  author: PropTypes.string.isRequired,
   description: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
   meta: PropTypes.array,
-  siteTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 

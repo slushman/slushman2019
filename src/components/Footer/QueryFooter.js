@@ -4,10 +4,10 @@ import useSiteMetadata from '../../hooks/UseSiteMetadata';
 import Footer from './Footer';
 
 const QueryFooter = () => {
-	const { title } = useSiteMetadata();
+	const { siteTitle } = useSiteMetadata();
 
   return (
-    <Footer title={ title } />
+    <Footer title={ siteTitle } />
   )
 };
 

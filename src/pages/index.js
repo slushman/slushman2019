@@ -5,14 +5,14 @@ import BlogIndex from './BlogIndex';
 import useSiteMetadata from '../hooks/UseSiteMetadata';
 
 const QueryBlogIndex = ( { data, location } ) => {
-  const { title } = useSiteMetadata();
+  const { siteTitle } = useSiteMetadata();
   const posts = data.allMdx.edges;
 
   return (
 		<BlogIndex
 			location={ location }
 			posts={ posts }
-			siteTitle={ title }
+			siteTitle={ siteTitle }
 		/>
   )
 };

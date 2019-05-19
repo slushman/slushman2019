@@ -1,16 +1,18 @@
 import React from 'react';
 
-import {
-	linkStyle,
-	menuItem,
-	menuList,
-	navStyle,
-} from './social-menu-styles';
 import Facebook from '../SVGs/Facebook';
 import Github from '../SVGs/Github';
 import LinkedIn from '../SVGs/Linkedin';
 import RSS from '../SVGs/RSS';
 import Twitter from '../SVGs/Twitter';
+
+import {
+	linkStyle,
+	menuItem,
+	menuList,
+	navStyle,
+} from './socialmenu-styles';
+
 
 const SocialMenu = () => (
 	<nav css={ navStyle }>

@@ -5,11 +5,11 @@ import useSiteMetadata from '../../hooks/UseSiteMetadata';
 import Bio from './Bio';
 
 const QueryBio = () => {
-  const data = useStaticQuery( bioQuery );
+  const { avatar } = useStaticQuery( bioQuery );
   const { author } = useSiteMetadata();
 
   return (
-    <Bio author={ author } avatar={ data.avatar } />
+    <Bio author={ author } avatar={ avatar } />
   )
 };
 

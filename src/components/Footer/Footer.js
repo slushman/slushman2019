@@ -2,22 +2,20 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 
-import { contentWidth } from '../Layout/layout-styles';
-const thisYear = new Date().getFullYear();
+import SocialMenu from '../SocialMenu';
+
 import {
 	copyright,
+	copyWrap,
 	siteFooter,
 	socialWrap,
 } from './footer-styles';
-import SocialMenu from '../SocialMenu';
+
+const thisYear = new Date().getFullYear();
 
 const Footer = ( { title } ) => (
 	<footer css={ siteFooter }>
-		<div
-			css={ css`
-				${ contentWidth }
-			` }
-		>
+		<div css={ copyWrap }>
 			<div css={ copyright } data-test="copyright">
 				{
 					`© ${ thisYear } ${ title }`

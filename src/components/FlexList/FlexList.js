@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+
+import {
+	StyledFlexList,
+} from './flexlist-styles';
 
 const FlexList = ( { children, spacing } ) => (
-	<ul
-		css={ css`
-			display: flex;
-			justify-content: ${ spacing };
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		` }
-	>{ children }</ul>
+	<StyledFlexList spacing={ spacing }>{ children }</StyledFlexList>
 );
 
 FlexList.propTypes = {
