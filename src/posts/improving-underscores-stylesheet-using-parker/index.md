@@ -45,11 +45,11 @@ Another fairly easy tweak will decrease the Identifiers Per Rule and the Selecto
 
 While that's all well and good for the button selectors, the field selectors are another story. Do we really need to specify each type of field here? Its more efficient to take all the input[type="text"], input[type="password"], etc and make the entire selector just: "input, textarea". Then move all the button selectors below this edited selector, so they get different styling than the generic "input" styling. If we need different styling for a particular input type, we can add that in after the input selector's declaration. So the Forms sections goes from this:
 
-![][./images/parker-forms-styles-before.png "Forms Styles Before"]
+![](./images/parker-forms-styles-before.png "Forms Styles Before")
 
 To this:
 
-![][./images/parker-forms-styles-after.png "Forms Styles After"]
+![](./images/parker-forms-styles-after.png "Forms Styles After")
 
 When we rerun Parker on the updated stylesheet, we get:
 

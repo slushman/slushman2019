@@ -44,7 +44,7 @@ $wp_customize->add_control(
 $wp_customize->get_setting( 'formidable_form_select' )->transport = 'postMessage';
 ```
 
-[Gist](https://gist.github.com/slushman/c468381070f431d837afbf5af7e09247)
+[Gist of the code above](https://gist.github.com/slushman/c468381070f431d837afbf5af7e09247)
 
 Brief explanation
 

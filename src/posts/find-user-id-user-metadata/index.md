@@ -30,6 +30,6 @@ function get_user_by_metadata( $metakey, $metavalue ) {
 } // get_user_by_metadata()
 ```
 
-Gist [of the code above](https://gist.github.com/slushman/f236ae998f7b5cd7a49c)
+[Gist of the code above](https://gist.github.com/slushman/f236ae998f7b5cd7a49c)
 
 Keep in mind, this returns an array, not a string.

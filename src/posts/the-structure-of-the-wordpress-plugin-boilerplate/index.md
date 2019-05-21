@@ -10,7 +10,7 @@ The structure makes plugin development more predictable and easier to maintain i
 
 ## Plugin Folder
 
-[![WordPress Plugin Boilerplate Main Folder](./images/wp-plugin-boilerplate-root-folder.png)](./images/wp-plugin-boilerplate-root-folder.png)The main plugin folder contains basic files for creating a WordPress plugin.
+![WordPress Plugin Boilerplate Main Folder](./images/wp-plugin-boilerplate-root-folder.png)The main plugin folder contains basic files for creating a WordPress plugin.
 
 ### Main Plugin File
 
@@ -36,11 +36,11 @@ Plugins usually remove settings and other database-related features in the unins
 
 ## Languages
 
-[![WordPress Plugin Boilerplate Languages Folder](./images/wp-plugin-boilerplate-languages-folder.png)](./images/wp-plugin-boilerplate-languages-folder.png) The languages folder contains all the files needed for translations. The boilerplate includes an empty .pot file for translations. You can optionally include additional .pot files containing the translated strings.
+![WordPress Plugin Boilerplate Languages Folder](./images/wp-plugin-boilerplate-languages-folder.png) The languages folder contains all the files needed for translations. The boilerplate includes an empty .pot file for translations. You can optionally include additional .pot files containing the translated strings.
 
 ## Admin & Public
 
-[![WordPress Plugin Boilerplate Public Folder](./images/wp-plugin-boilerplate-public-folder.png)](./images/wp-plugin-boilerplate-public-folder.png) [![WordPress Plugin Boilerplate Admin Folder](./images/wp-plugin-boilerplate-admin-folder.png)](./images/wp-plugin-boilerplate-admin-folder.png) Since both the admin and public folders have the same structures, I'll explain both at once. The admin and public classes have the same structure and methods, but keep the different concerns separated.
+![WordPress Plugin Boilerplate Public Folder](./images/wp-plugin-boilerplate-public-folder.png) ![WordPress Plugin Boilerplate Admin Folder](./images/wp-plugin-boilerplate-admin-folder.png) Since both the admin and public folders have the same structures, I'll explain both at once. The admin and public classes have the same structure and methods, but keep the different concerns separated.
 
 ### class-plugin-name-admin.php & class-plugin-name-public.php
 
@@ -48,19 +48,19 @@ This is the main class. Most of the plugin code will reside in one or both of th
 
 ### partials
 
-[![WordPress Plugin Boilerplate Admin Partials Folder](./images/wp-plugin-boilerplate-admin-partials-folder.png)](./images/wp-plugin-boilerplate-admin-partials-folder.png) The partials subfolder contains PHP files with the output HTML code. For example, displaying a settings page in the admin requires using two files. The WordPRess API code resides in the admin class, but the HTML output would be in a partial file.
+![WordPress Plugin Boilerplate Admin Partials Folder](./images/wp-plugin-boilerplate-admin-partials-folder.png) The partials subfolder contains PHP files with the output HTML code. For example, displaying a settings page in the admin requires using two files. The WordPRess API code resides in the admin class, but the HTML output would be in a partial file.
 
 ### JS
 
-[![WordPress Plugin Boilerplate Admin JS Folder](./images/wp-plugin-boilerplate-admin-js-folder.png)](./images/wp-plugin-boilerplate-admin-js-folder.png) This folder contains all the Javascript files for the plugin.
+![WordPress Plugin Boilerplate Admin JS Folder](./images/wp-plugin-boilerplate-admin-js-folder.png) This folder contains all the Javascript files for the plugin.
 
 ### CSS
 
-[![WordPress Plugin Boilerplate Admin CSS Folder](./images/wp-plugin-boilerplate-admin-css-folder.png)](./images/wp-plugin-boilerplate-admin-css-folder.png) This folder contains all the CSS files for the plugin.
+![WordPress Plugin Boilerplate Admin CSS Folder](./images/wp-plugin-boilerplate-admin-css-folder.png) This folder contains all the CSS files for the plugin.
 
 ## Includes
 
-[![WordPress Plugin Boilerplate Includes Folder](./images/wp-plugin-boilerplate-includes-folder.png)](./images/wp-plugin-boilerplate-includes-folder.png) The includes folder is Tom's answer for where to put code that isn't exclusive to the admin or public. A common question prior to version three was where to put code for features that are both public and admin, like widgets.
+![WordPress Plugin Boilerplate Includes Folder](./images/wp-plugin-boilerplate-includes-folder.png) The includes folder is Tom's answer for where to put code that isn't exclusive to the admin or public. A common question prior to version three was where to put code for features that are both public and admin, like widgets.
 
 ### class-plugin-name.php
 

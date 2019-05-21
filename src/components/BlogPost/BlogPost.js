@@ -10,6 +10,7 @@ import SEO from '../SEO';
 import Shurls from '../Shurls';
 import Gallery from '../Gallery';
 import Codepen from '../Codepen';
+import Youtube from '../Youtube';
 
 import {
   postDate,
@@ -19,6 +20,7 @@ import {
 const mdxComponents = {
   Codepen,
   Gallery,
+  Youtube,
 };
 
 const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (

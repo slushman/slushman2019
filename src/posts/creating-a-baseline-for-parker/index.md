@@ -60,7 +60,7 @@ Before we move on, let's briefly go through the terminology in the results so w
 
 If you're like me and find all the terms confusing, this diagram maps it out. At minimum, I'm adding this for my future self who doesn't remember what's what.
 
-![This entire thing is a rule.][./images/Parker-CSS-Parts.jpg "Parker CSS Parts"]
+![This entire thing is a rule.](./images/Parker-CSS-Parts.jpg "Parker CSS Parts")
 
 ## Parker Results, Explained
 

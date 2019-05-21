@@ -36,6 +36,6 @@ function change_featured_image_labels( $labels ) {
 add_filter( 'post_type_labels_employee', 'change_featured_image_labels', 10, 1 );
 ```
 
-Gist [of the code above](https://gist.github.com/slushman/454cc8b26c330727df13)
+[Gist of the code above](https://gist.github.com/slushman/454cc8b26c330727df13)
 
 The labels are in an object and we then reset the values of each specific item to what we want. Then return the object.

@@ -5,7 +5,7 @@ coverImage: "jeff-sheldon-3225-unsplash.jpg"
 category: ""
 ---
 
-[![Outlook 2011 Icon](./images/outlook2011icon-150x150.jpg)](./images/5/04/outlook2011icon.jpg)I just got Office for Mac 2011 yesterday and I've been putting it through its paces. The new "Ribbon" doesn't seem intuitive yet, but that may just take time. Two things that I'd like to see improved:
+![Outlook 2011 Icon](./images/outlook2011icon-150x150.jpg) I just got Office for Mac 2011 yesterday and I've been putting it through its paces. The new "Ribbon" doesn't seem intuitive yet, but that may just take time. Two things that I'd like to see improved:
 
 1. There's no way to create an automatic archive for back-ups like on the PC Outlook.
 2. There's no easy way to change the sound alerts.
@@ -16,11 +16,11 @@ Close Outlook
 
 Open your hard drive and go to Applications > Microsoft Office 2011 > Office
 
-[![show-package-contents](./images/show-package-contents.png)](./images/show-package-contents.png)
+![show-package-contents](./images/show-package-contents.png)
 
 Right-click (or control+click) on OutlookCore.framework and select Show Package Contents
 
-[![resources-wavs](./images/resources-wavs1.png)](./images/resources-wavs1.png)
+![resources-wavs](./images/resources-wavs1.png)
 
 Inside the Resources folder are the wav files for the alerts sounds.  To change the "new mail" sound, we want to replace the newmail.wav file by renaming the new alert to the same name and copying it into this folder.  Select to replace the file when asked.
 

@@ -28,4 +28,4 @@ function screen_layout_dashboard() {
 add_filter( 'get_user_option_screen_layout_dashboard', 'screen_layout_dashboard' );
 ```
 
-Gist [of the code above](https://gist.github.com/slushman/dafa494f9d76ce4252b5)
+[Gist of the code above](https://gist.github.com/slushman/dafa494f9d76ce4252b5)

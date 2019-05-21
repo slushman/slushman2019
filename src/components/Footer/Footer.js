@@ -15,15 +15,15 @@ const thisYear = new Date().getFullYear();
 
 const Footer = ( { title } ) => (
 	<footer css={ siteFooter }>
+		<div css={ socialWrap }>
+			<SocialMenu />
+		</div>
 		<div css={ copyWrap }>
 			<div css={ copyright } data-test="copyright">
 				{
 					`© ${ thisYear } ${ title }`
 				}
 			</div>
-		</div>
-		<div css={ socialWrap }>
-			<SocialMenu />
 		</div>
 	</footer>
 );

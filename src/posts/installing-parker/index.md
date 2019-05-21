@@ -16,7 +16,7 @@ Before performing any of the following steps, you'll need to install Parker and 
 
 ### Installing Xcode and the Developer Tools
 
-[![Install Xcode before installing Parker](./images/xcode.png)](./images/xcode.png)Open Terminal and hit enter after typing/pasting:
+![Install Xcode before installing Parker](./images/xcode.png) Open Terminal and hit enter after typing/pasting:
 
 ```bash
 xcode-select --install

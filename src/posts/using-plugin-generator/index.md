@@ -10,7 +10,7 @@ In the [previous post](https://www.slushman.com/post/understanding-the-loader-c
 
 ## Generating A Plugin
 
-![][./images/wordpress-plugin-boilerplate-generator-site.png "WordPress Plugin Boilerplate Generator Homepage"]
+![](./images/wordpress-plugin-boilerplate-generator-site.png "WordPress Plugin Boilerplate Generator Homepage")
 
 The generator operates from a simple form. After hitting the Build Plugin button, the site returns a zip file of a boilerplate-based plugin. Let's start by looking at the form.
 

@@ -76,7 +76,7 @@ add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
 ## Older Method
 
-[![datepicker-head](./images/datepicker-head.jpg)](./images/datepicker-head.jpg)
+![datepicker-head](./images/datepicker-head.jpg)
 
 I recently decided to dive into jQuery and figure out how to add a Datepicker to the Seminar system plugin I'm building for the Curb College at Belmont. Thankfully, I didn't need to write one from scratch because [jQuery UI](https://jqueryui.com/) already makes a great Datepicker and including it in a plugin is super easy. While I owe a great deal to [Zigpress's great tutorial](https://www.zigpress.com/2011/04/27/jquery-ui-datepicker-in-wordpress-admin/), the instructions are unfortunately outdated, so I'm going to update them here.
 
@@ -112,15 +112,15 @@ function seminar_scripts() {
 
 seminar_scripts() starts by checking the post type. If we're not in the correct post type, (cemb_seminar is my custom post type - be sure to change this to match your plugin), then return. Otherwise, enqueue the Datepicker and its theme. Change the plugins_url() link to match your plugin folder structure.
 
-[![jqui-theme](./images/jqui-theme.jpg)](./images/jqui-theme.jpg)
+![jqui-theme](./images/jqui-theme.jpg)
 
 For now (2/23/2012), you will need to include a theme for your Datepicker. WordPress doesn't include a theme for the Datepicker, but that should be resolved in a [coming update](https://core.trac.wordpress.org/ticket/18909). To get a theme, go to the jQuery UI [ThemeRoller](https://jqueryui.com/themeroller/), select the Gallery tab on the right sidebar, and choose your theme. I'm using [Smoothness](https://jqueryui.com/download/?themeParams=%3FffDefault%3DVerdana%2CArial%2Csans-serif%26fwDefault%3Dnormal%26fsDefault%3D1.1em%26cornerRadius%3D4px%26bgColorHeader%3Dcccccc%26bgTextureHeader%3D03_highlight_soft.png%26bgImgOpacityHeader%3D75%26borderColorHeader%3Daaaaaa%26fcHeader%3D222222%26iconColorHeader%3D222222%26bgColorContent%3Dffffff%26bgTextureContent%3D01_flat.png%26bgImgOpacityContent%3D75%26borderColorContent%3Daaaaaa%26fcContent%3D222222%26iconColorContent%3D222222%26bgColorDefault%3De6e6e6%26bgTextureDefault%3D02_glass.png%26bgImgOpacityDefault%3D75%26borderColorDefault%3Dd3d3d3%26fcDefault%3D555555%26iconColorDefault%3D888888%26bgColorHover%3Ddadada%26bgTextureHover%3D02_glass.png%26bgImgOpacityHover%3D75%26borderColorHover%3D999999%26fcHover%3D212121%26iconColorHover%3D454545%26bgColorActive%3Dffffff%26bgTextureActive%3D02_glass.png%26bgImgOpacityActive%3D65%26borderColorActive%3Daaaaaa%26fcActive%3D212121%26iconColorActive%3D454545%26bgColorHighlight%3Dfbf9ee%26bgTextureHighlight%3D02_glass.png%26bgImgOpacityHighlight%3D55%26borderColorHighlight%3Dfcefa1%26fcHighlight%3D363636%26iconColorHighlight%3D2e83ff%26bgColorError%3Dfef1ec%26bgTextureError%3D02_glass.png%26bgImgOpacityError%3D95%26borderColorError%3Dcd0a0a%26fcError%3Dcd0a0a%26iconColorError%3Dcd0a0a%26bgColorOverlay%3Daaaaaa%26bgTextureOverlay%3D01_flat.png%26bgImgOpacityOverlay%3D0%26opacityOverlay%3D30%26bgColorShadow%3Daaaaaa%26bgTextureShadow%3D01_flat.png%26bgImgOpacityShadow%3D0%26opacityShadow%3D30%26thicknessShadow%3D8px%26offsetTopShadow%3D-8px%26offsetLeftShadow%3D-8px%26cornerRadiusShadow%3D8px) because I think it most closely matches the WordPress Admin UI.
 
-[![jqui-download](./images/jqui-download.jpg)](./images/jqui-download.jpg)
+![jqui-download](./images/jqui-download.jpg)
 
 Clicking the Download button under a theme will take you to a page where you can select options for your jQuery UI download. Select your theme from the Theme drop menu, select the stable version, and click the Download button.
 
-[![zip-folder](./images/zip-folder.jpg)](./images/zip-folder.jpg)
+![zip-folder](./images/zip-folder.jpg)
 
 When it finishes downloading, unzip the file and go to the css > smoothness folder. In my plugin, I've got a CSS folder. Drag the jquery-ui-1.8.17.custom.css file and images folder from the zip file into your plugin's CSS folder (or wherever you pointed the plugins_url() line in the enqueue statement in seminar_scripts()).
 

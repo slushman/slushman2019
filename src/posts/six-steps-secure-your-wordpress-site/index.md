@@ -7,9 +7,7 @@ category: "Security"
 
 There's a great breakdancing move called 6-step. If you've seen breakdancing, you've probably seen this before, but, like me, didn't know what to call it. Basically, the dancer supports himself on his arms while moving his feet around in a circle. It's great for getting momentum and launching other moves.
 
-<Youtube
-	videoId="zPdQ1gN7Ngo"
-/>
+<Youtube videoId="zPdQ1gN7Ngo" />
 
 Why do I bring this up? You may have heard about the ongoing attacks against WordPress sites. It appears someone is using up to 90,000 different IP addresses to launch brute-force attacks against sites built with WordPress and are gaining access to some sites. Stupidly, they are trying to gain access with the username "admin" and trying to figure out the password for that user.
 

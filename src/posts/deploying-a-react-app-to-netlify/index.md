@@ -76,7 +76,7 @@ netlifyctl login
 This will open your Netlify account in a web browser and ask if you want to give the CLI permission to access your account.
 
 
-![][./images/authorize-netlify-cli.png "Netlify grant permissions prompt"]
+![](./images/authorize-netlify-cli.png "Netlify grant permissions prompt")
 
 Click the Authorize button. Once it confirms the CLI has permission to access your account, you can close the browser tab/window.
 
