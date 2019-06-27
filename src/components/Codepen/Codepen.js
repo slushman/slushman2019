@@ -8,6 +8,9 @@ import {
 	StyledIframe
 } from './codepen-styles';
 
+export const defaultHeight = '268px';
+export const defaultWidth = '100%';
+
 const Codepen = ( {
 	caption,
 	height,
@@ -65,11 +68,11 @@ Codepen.propTypes = {
 
 Codepen.defaultProps = {
 	caption: '',
-  height: '268px',
+  height: defaultHeight,
   tab: 'result',
 	theme: '0',
 	user: 'slushman',
-  width: '100%',
+  width: defaultWidth,
 };
 
 export default Codepen;

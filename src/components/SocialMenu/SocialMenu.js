@@ -4,47 +4,38 @@ import Facebook from '../SVGs/Facebook';
 import Github from '../SVGs/Github';
 import LinkedIn from '../SVGs/Linkedin';
 import RSS from '../SVGs/RSS';
-import Twitter from '../SVGs/Twitter';
 
 import {
+	linkLabel,
 	linkStyle,
 	menuItem,
 	menuList,
-	navStyle,
 } from './socialmenu-styles';
 
+const sizeProps = {
+	height: 36,
+	width: 36,
+};
 
 const SocialMenu = () => (
-	<nav css={ navStyle }>
+	<nav>
 		<ul css={ menuList }>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://github.com/slushman">
-					<Github />
-					<p>GitHub</p>
-				</a>
-			</li>
-			<li css={ menuItem }>
-				<a css={ linkStyle } href="https://twitter.com/slushman">
-					<Twitter />
-					<p>Twitter</p>
-				</a>
-			</li>
-			<li css={ menuItem }>
-				<a css={ linkStyle } href="https://www.facebook.com/slushmandesign">
-					<Facebook />
-					<p>Facebook</p>
+					<Github {...sizeProps} />
+					<p css={ linkLabel }>GitHub</p>
 				</a>
 			</li>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://www.linkedin.com/in/chriswilcoxson/">
-					<LinkedIn />
-					<p>LinkedIn</p>
+					<LinkedIn {...sizeProps} />
+					<p css={ linkLabel }>LinkedIn</p>
 				</a>
 			</li>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://www.slushman.com/rss.xml">
-					<RSS />
-					<p>RSS</p>
+					<RSS {...sizeProps} />
+					<p css={ linkLabel }>RSS</p>
 				</a>
 			</li>
 		</ul>

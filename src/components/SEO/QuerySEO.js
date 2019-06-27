@@ -9,7 +9,6 @@ const QuerySEO = ( { description, keywords, lang, meta, title } ) => {
   const data = useStaticQuery( seoQuery );
 	const { author, siteDescription, siteTitle } = useSiteMetadata();
   const useDescription = description || siteDescription;
-  console.log(siteTitle);
 
   return (
 		<SEO

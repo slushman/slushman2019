@@ -23,6 +23,7 @@ const defaultProps = {
 			slug: '',
 		},
 		frontmatter: {
+			category: [],
 			date: '',
 			title: '',
 		},
@@ -62,7 +63,7 @@ describe('<BlogPost />', () => {
 		expect(foundSEO.prop('title')).toBe(defaultProps.post.frontmatter.title);
 		expect(foundSEO.prop('description')).toBe(defaultProps.post.excerpt);
 		expect(foundH1.prop('children')).toBe(defaultProps.post.frontmatter.title);
-		expect(foundPostDate.prop('children')).toBe(defaultProps.post.frontmatter.date);
+		expect(foundPostDate.prop('children')[1]).toBe(defaultProps.post.frontmatter.date);
 		expect(foundContent.prop('children')).toBe(defaultProps.post.code.body);
 	});
 
@@ -154,7 +155,7 @@ describe('<BlogPost />', () => {
 			expect(foundSEO.prop('title')).toBe(givenPost.frontmatter.title);
 			expect(foundSEO.prop('description')).toBe(givenPost.excerpt);
 			expect(foundH1.prop('children')).toBe(givenPost.frontmatter.title);
-			expect(foundPostDate.prop('children')).toBe(givenPost.frontmatter.date);
+			expect(foundPostDate.prop('children')[1]).toBe(givenPost.frontmatter.date);
 			expect(foundContent.prop('children')).toBe(givenPost.code.body);
 		});
 	});

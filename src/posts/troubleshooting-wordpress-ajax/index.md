@@ -1,7 +1,8 @@
 ---
 date: "2018-05-28"
 title: "Troubleshooting WordPress AJAX"
-category: "Development"
+category: ["Development"]
+featuredImage: './al-x-407225-unsplash.jpg'
 ---
 
 I was working with some AJAX functionality a while back and started writing down the problems and solutions I ran across so they were all in one place. Basically, this post is for my future self. I hope you find it useful as well. :)

@@ -1,7 +1,8 @@
 ---
 title: "Inline SVG the Sane Way"
 date: "2014-11-10"
-category: "Code Samples"
+category: ["Code Samples"]
+featuredImage: './bady-qb-IMe2YkH5vB4-unsplash.jpg'
 ---
 
 Like everyone else these days, I've totally jumped onboard [the SVG train](https://www.smashingmagazine.com/2012/01/16/resolution-independence-with-svg/). They're scalable and easy to use. If you use inline SVG, they are style-able and reduce server requests, which can help your SEO and loading times.

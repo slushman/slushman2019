@@ -27,8 +27,24 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
+            resolve: 'gatsby-remark-images-grid',
+            options: {
+              className: 'gallery',
+              gridGap: '20px',
+              margin: '20px auto',
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-zoom`,
+            options: {
+              background: '#023451',
+            },
+          },
+
+          {
             resolve: `gatsby-remark-images`,
             options: {
+              // linkImagesToOriginal: false,
               maxWidth: 590,
             },
           },

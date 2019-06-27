@@ -1,7 +1,8 @@
 ---
 date: "2016-10-26"
 title: "Improving Underscores Stylesheet Using Parker"
-category: "Parker"
+category: ["Parker"]
+featuredImage: './element5-digital-LTyDj7u_TU4-unsplash.jpg'
 ---
 
 In the [previous post](https://www.slushman.com/post//creating-a-baseline-for-parker/) in this [series about Parker](https://www.slushman.com/post/parker-and-wordpress-theme-development/), we created a baseline for the _s stylesheet and went through the results to understand them better. We also get some ideal scores for each metric. Now that we understand what we're trying to do and why, let's see how we can change the default _s stylesheet to get better scores from Parker and create a simpler, more maintainable stylesheet.

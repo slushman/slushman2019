@@ -1,7 +1,8 @@
 ---
 date: "2018-01-18"
 title: "PHPUnit tests and WP-CLI"
-category: "Development"
+category: ["Development"]
+featuredImage: './chuttersnap-pgfWIStWIfs-unsplash.jpg'
 ---
 
 I recently discovered an easy way to add unit tests to my plugins. I've been using WP-CLI for years now to set up new local installs of WordPress and found out it has a command specifically for setting up PHPUnit for plugins. This post is partially for my future self so I can remember how to do all this. FYI, I'm on a Mac, so all the commands will be OS X-specific.

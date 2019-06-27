@@ -1,8 +1,8 @@
 ---
 title: "Child themes for WooThemes"
 date: "2014-09-08"
-coverImage: "craig-whitehead-546355-unsplash.jpg"
-category: "Development"
+category: ["Development"]
+featuredImage: "./craig-whitehead-546355-unsplash.jpg"
 ---
 
 I've been using child themes for several years now, but I'd never used one with a theme by WooThemes. Most of my clients needed simple customizing, so I used WooTheme's backend options to make the changes.

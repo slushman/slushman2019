@@ -1,7 +1,8 @@
 ---
 date: "2016-10-25"
 title: "Creating a Baseline for Parker"
-category: "Parker"
+category: ["Parker"]
+featuredImage: './elisa-michelet-b4EsL48DIK0-unsplash.jpg'
 ---
 
 In the [previous post](https://www.slushman.com/post/installing-parker/) in this [series about Parker](https://www.slushman.com/post/parker-and-wordpress-theme-development/), we installed the stylesheet analysis tool and all its dependencies. Now, we're going to create a baseline measurement of the default _s stylesheet and explain the results from Parker.

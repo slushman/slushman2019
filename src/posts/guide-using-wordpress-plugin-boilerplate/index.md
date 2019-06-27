@@ -1,7 +1,8 @@
 ---
 date: "2017-05-21"
 title: "A Guide to Using the WordPress Plugin Boilerplate"
-category: "WordPress Plugin Boilerplate"
+category: ["WordPress Plugin Boilerplate"]
+featuredImage: './kai-oberhauser-ELCSOhGi73M-unsplash.jpg'
 ---
 
 For several years now, I've been building plugins using the [WordPress Plugin Boilerplate](https://wppb.io/) project. In 2015, I gave a [WordCamp talk](https://www.slushman.com/presentations/using-wp-plugin-boilerplate) about how to use it. Over the past few years, I've answered questions about how to build plugins with the boilerplate. Since there is no official documentation, I hope these posts serve as some unofficial documentation. I covered most of this introductory material in my WordCamp talk. However, I'm planning more detailed posts, additional code examples, and topics I didn't cover in the presentation. I'll also offer some shortcuts and potential improvements, in case you want to fork the boilerplate.

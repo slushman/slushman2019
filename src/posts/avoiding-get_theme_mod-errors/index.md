@@ -1,7 +1,8 @@
 ---
 title: "Avoiding get_theme_mod Errors"
 date: "2015-04-16"
-category: "Code Samples"
+category: ["Code Samples"]
+featuredImage: './jr-korpa-mMLTFBCiEJI-unsplash.jpg'
 ---
 
 If you're getting an error related to [get_theme_mod](https://developer.wordpress.org/reference/functions/get_theme_mod/), its most likely from how you're checking if the returned result is empty. Most developers will probably do the same thing I did: make a variable and assign it to the result of get_theme_mod. Then check if its empty using PHP's [empty()](https://php.net/manual/en/function.empty.php) method. Sadly, this is where you're getting an error. Instead, check if the result is equal to '', or blank.
@@ -10,7 +11,7 @@ If you're getting an error related to [get_theme_mod](https://developer.wordpres
 /**
  * Do this
  */
-if ( '' == get_theme_mod( 'something' ) ) { ... }
+if ( '' === get_theme_mod( 'something' ) ) { ... }
  
  /**
   * Not this

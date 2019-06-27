@@ -1,7 +1,8 @@
 ---
 date: "2016-10-28"
 title: "Results for the Underscores Stylesheet"
-category: "Parker"
+category: ["Parker"]
+featuredImage: './dylan-nolte-RSsqjpezn6o-unsplash.jpg'
 ---
 
 In the [previous posts](https://www.slushman.com/post/simplifying-menu-styling/) in the [Parker series](https://www.slushman.com/post/parker-and-wordpress-theme-development/), we optimized the stylesheet for the _s starter theme. We also used hooks and functions to customize the WordPress menus. In this post, we will compare our goals and the results we achieved using Parker. Here were our the goals:

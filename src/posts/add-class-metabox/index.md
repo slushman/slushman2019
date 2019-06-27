@@ -1,7 +1,8 @@
 ---
 title: "How to Add a Class to a Metabox"
 date: "2012-09-08"
-category: "Code Samples"
+category: ["Code Samples"]
+featuredImage: './noodle-kimm-ytMmedc6y44-unsplash.jpg'
 ---
 
 While developing a new plugin, I needed to toggle the visibility of some metaboxes. The visibility of each metabox depends on the selected radio button in another metabox. In order to toggle the correct metabox, each metabox needs a distinct class. Check the code samples below for how to add a class to a metabox.

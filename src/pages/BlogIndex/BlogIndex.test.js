@@ -1,6 +1,6 @@
 import { shallowFactory } from '../../../testutils';
 
-import BlogIndex from './BlogIndex';
+import BlogIndex from './index';
 
 const defaultProps = {
 	location: {

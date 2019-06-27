@@ -12,19 +12,20 @@ import {
 	titleP,
 	toggle,
 	toggleLabel,
+	toggleText,
 } from './header-styles';
+import ThemeContext from '../../context/ThemeContext';
 
 const Header = ( { location, title } ) => {
 	const rootPath = `${ __PATH_PREFIX__ }/`;
 	const isHome = location.pathname === rootPath;
+	const themeContext = React.useContext( ThemeContext );
+ 	const themeLabel = themeContext.theme === 'dark' ? 'Dark theme' : 'Light theme';
 	let output = '';
 
-	const [ theme, setTheme ] = React.useState( window.__theme );
-
-	React.useEffect( () => {
-		window.__onThemeChange = () => {
-			setTheme( window.__theme );
-		}
+	const handleChange = React.useCallback( event => {
+		const newValue = event.target.checked ? 'dark' : 'light';
+		themeContext.toggleTheme( newValue )
 	} );
 
 	if( isHome ) {
@@ -45,20 +46,16 @@ const Header = ( { location, title } ) => {
 		<header css={ header }>
 			<div css={ headerWrap }>
 				{ output }
-				<label>
-					<span css={ toggleLabel }>Dark mode: { theme === 'dark' ? 'on' : 'off' }</span>
+				<label css={ toggleLabel }>
+					<span css={ toggleText }>{ themeLabel }</span>
 					<Toggle
-						checked={ theme === 'dark' }
+						checked={ themeContext.theme === 'dark' }
 						css={ toggle }
-						onChange={ event =>
-							window.__setPreferredTheme(
-								event.target.checked ? 'dark' : 'light'
-							)
-						}
+						onChange={ handleChange }
 					/>
 				</label>
 			</div>
-		{ isHome && <Bio /> }
+		{ isHome && <Bio isHeader={ true } /> }
 		</header>
 	);
 }

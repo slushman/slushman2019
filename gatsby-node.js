@@ -1,10 +1,13 @@
 const path = require( `path` );
+const _ = require( 'lodash' );
 const { createFilePath } = require( `gatsby-source-filesystem` );
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ( { graphql, actions } ) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve( `./src/templates/blog-post.js` );
+  const categoryTemplate = path.resolve( `./src/templates/category.js` );
+
   return graphql(
     `
       {
@@ -20,6 +23,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                gallery
+                category
               }
               code {
                 scope
@@ -51,8 +56,26 @@ exports.createPages = ({ graphql, actions }) => {
         },
       } )
     } )
+
+    let categories = []
+    _.each( posts, edge => {
+      if ( _.get( edge, 'node.frontmatter.category' ) ) {
+        categories = categories.concat( edge.node.frontmatter.category )
+      }
+    } )
+    categories = _.uniq( categories );
+
+    categories.forEach( category => {
+      createPage( {
+        path: `/category/${ _.kebabCase( category ) }/`,
+        component: categoryTemplate,
+        context: {
+          category,
+        },
+      } )
+    } )
   } )
-}
+};
 
 exports.onCreateNode = ( { node, actions, getNode } ) => {
   const { createNodeField } = actions

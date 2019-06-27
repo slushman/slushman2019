@@ -3,6 +3,8 @@ import { MDXProvider } from '@mdx-js/tag';
 import Code from './src/components/Code';
 import { preToCodeBlock } from 'mdx-utils';
 
+import { ThemeProvider } from './src/context/ThemeContext';
+
 // components is its own object outside of render so that the references to
 // components are stable
 const components = {
@@ -19,5 +21,11 @@ const components = {
 };
 
 export const wrapRootElement = ( { element } ) => (
-  <MDXProvider components={ components }>{ element }</MDXProvider>
+  <ThemeProvider>
+    <MDXProvider components={ components }>
+      {
+        element
+      }
+    </MDXProvider>
+  </ThemeProvider>
 );

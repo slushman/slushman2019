@@ -11,10 +11,11 @@ describe('<Title />', () => {
   it('renders without crashing', () => {
 		const wrapper = factory();
 		const foundLink = wrapper.find('[to="/"]');
+		const foundImage = foundLink.find('img');
 
 		expect(wrapper.exists()).toBe(true);
 		expect(foundLink.exists()).toBe(true);
-		expect(foundLink.prop('children')).toBe(defaultProps.title);
+		expect(foundImage.exists()).toBe(true);
 	});
 
 	describe('when given a title', () => {
@@ -24,8 +25,9 @@ describe('<Title />', () => {
 				title: givenTitle,
 			});
 			const foundLink = wrapper.find('[to="/"]');
+			const foundImage = foundLink.find('img');
 
-			expect(foundLink.prop('children')).toBe(givenTitle);
+			expect(foundImage.prop('alt')).toBe(givenTitle);
 		});
 	});
 });

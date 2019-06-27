@@ -1,77 +1,44 @@
-import { css } from '@emotion/core';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import FlexList from '../FlexList';
-import IconEmail from './Email';
-import IconFacebook from './Facebook';
-import IconLinkedIn from './Linkedin';
-import IconPinterest from './Pinterest';
-import IconStumbleupon from './Stumbleupon';
-import IconTumblr from './Tumblr';
-import IconTwitter from './Twitter';
-
-import {
-	link,
-	round,
-	shurlWrap,
-} from './shurls-styles';
+import ShurlsList from './ShurlsList';
+import NativeShare from './NativeShare';
+import { shurlWrap } from './shurls-styles';
 
 const Shurls = ( { postNode, rounded } ) => {
 	const post = postNode.frontmatter;
-	const currentUrl = window.location.href;
-	const currentTitle = escape( post.title );
 	const currentExcerpt = escape( post.excerpt );
 	const currentMedia = post.media ? post.media : null;
-	const linkStyles = rounded ? [ round, link ] : [ link ];
-	const shurlLinks = [
-		{
-			url: `mailto:?subject=${ currentTitle }&body=${ currentExcerpt }`,
-			component: <IconEmail />,
-		},
-		{
-			url: `https://www.facebook.com/sharer/sharer.php?u=${ currentUrl }`,
-			component: <IconFacebook />,
-		},
-		{
-			url: `https://www.linkedin.com/shareArticle?mini=true&url=${ currentUrl }&source=${ currentUrl }`,
-			component: <IconLinkedIn />,
-		},
-		{
-			url: `https://pinterest.com/pin/create/button/url=${ currentUrl }&description=${ currentExcerpt }&media=${ currentMedia}`,
-			component: <IconPinterest />,
-		},
-		{
-			url: `http://www.stumbleupon.com/submit?url=${ currentUrl }&title=${ currentTitle }`,
-			component: <IconStumbleupon />,
-		},
-		{
-			url: `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${ currentUrl }&title=${ currentTitle }`,
-			component: <IconTumblr />,
-		},
-		{
-			url: `https://twitter.com/intent/tweet?url=${ currentUrl }`,
-			component: <IconTwitter />,
-		},
-	];
+	const currentUrl = window.location.href;
+	const currentTitle = escape( post.title );
+	let output;
+
+	if (navigator.share) {
+		output = (
+			<NativeShare
+				shareText={ currentExcerpt }
+				shareTitle={ currentTitle }
+				shareUrl={ currentUrl }
+			/>
+		);
+	} else {
+		output = (
+			<ShurlsList
+				shareMedia={ currentMedia }
+				shareText={ currentExcerpt }
+				shareTitle={ currentTitle }
+				shareUrl={ currentUrl }
+				rounded={ rounded }
+			/>
+		);
+	}
 
 	return (
 		<section css={ shurlWrap }>
 			<h2>Share this post!</h2>
 			<FlexList spacing="space-around">
-				{
-					shurlLinks.map( ( link, i ) => (
-						<li key={ i }>
-							<a
-								className="link-shurl"
-								css={ linkStyles }
-								href={ link.url }
-								target="_blank"
-							>
-								{ link.component }
-							</a>
-						</li>
-					) )
-				}
+				{output}
 			</FlexList>
 		</section>
 	);

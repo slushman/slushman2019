@@ -22,7 +22,7 @@ describe('<FlexList />', () => {
 				spacing: givenSpacing,
 			});
 
-			expect.stringContaining(givenSpacing);
+			expect(wrapper.prop('spacing')).toBe(givenSpacing);
 		});
 	});
 });

@@ -1,6 +1,8 @@
 ---
 title: "Using WordPress Plugin Boilerplate"
 date: "2015-03-21"
+category: ["WordPress Plugin Boilerplate"]
+featuredImage: './mikael-kristenson-242070-unsplash.jpg'
 ---
 
 This afternoon, I presented "Using WordPress Plugin Boilerplate" at WordCamp Dayton. My presentation covered the new 3.0 version of the boilerplate. I want to make everything easy to find, so here are the links from my presentation, including my sample plugin "Now Hiring":

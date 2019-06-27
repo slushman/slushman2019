@@ -1,8 +1,8 @@
 ---
 title: "How to Change the New Mail Sound in Office 2011 for Mac"
 date: "2010-10-28"
-coverImage: "jeff-sheldon-3225-unsplash.jpg"
-category: ""
+category: ["IT"]
+featuredImage: "./jeff-sheldon-3225-unsplash.jpg"
 ---
 
 ![Outlook 2011 Icon](./images/outlook2011icon-150x150.jpg) I just got Office for Mac 2011 yesterday and I've been putting it through its paces. The new "Ribbon" doesn't seem intuitive yet, but that may just take time. Two things that I'd like to see improved:

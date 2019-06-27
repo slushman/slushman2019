@@ -43,9 +43,6 @@ describe('returnUrlParameterString', () => {
 	});
 });
 
-// list: '',
-// listType: 'SEARCH',
-
 describe('Youtube', () => {
 	it('should render without crashing', () => {
 		const wrapper = factory();

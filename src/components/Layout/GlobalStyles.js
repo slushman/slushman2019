@@ -1,45 +1,60 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 
+import { Normalize } from './normalize';
+
+export const contentWidth = css`
+  --pad: 1em;
+
+  padding-left: var( --pad );
+  padding-right: var( --pad );
+ 
+  @media screen and (min-width: 50rem) {
+    --pad: calc(100vw/2 - 50rem/2);
+  }
+`;
+
+export const blueSection = css`
+	${ contentWidth }
+
+	background-color: var( --bgColor );
+
+	.light & {
+    --bgColor: #90C8E8;
+    --linkColor: #023451;
+	}
+
+	.dark & {
+    --bgColor: #03649C;
+    --linkColor: #fff;
+  }
+  
+  a {
+    color: var( --linkColor );
+  }
+`;
+
 const GlobalStyles = () => (
   <Global styles={ css`
-    /* latin */
-    @font-face {
-      font-family: 'Source Code Pro';
-      font-style: normal;
-      font-weight: 400;
-      src: local( 'Source Code Pro' ), local( 'SourceCodePro-Regular' ), url(https://fonts.gstatic.com/s/sourcecodepro/v7/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevWnsUnxg.woff2) format( 'woff2' );
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    ${ Normalize }
+    html {
+      box-sizing: border-box;
     }
-    /* latin */
-    @font-face {
-      font-family: 'Source Sans Pro';
-      font-style: normal;
-      font-weight: 400;
-      src: local( 'Source Sans Pro Regular' ), local( 'SourceSansPro-Regular' ), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2) format( 'woff2' );
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
     }
-    /* latin */
-    @font-face {
-      font-family: 'Source Sans Pro';
-      font-style: normal;
-      font-weight: 700;
-      src: local( 'Source Sans Pro Bold' ), local( 'SourceSansPro-Bold' ), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format( 'woff2' );
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    /* latin */
-    @font-face {
-      font-family: 'Merriweather';
-      font-style: normal;
-      font-weight: 700;
-      src: local( 'Merriweather Bold' ), local( 'Merriweather-Bold' ), url(https://fonts.gstatic.com/s/merriweather/v5/neIXzD-0qpwxpaWvjeD0X88SAOeasc8btSyqxKcsdrM.woff2) format( 'woff2' );
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
+
     body {
       background-color: var( --bgColor );
       color: var( --textColor );
+      display: grid;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 20px;
+      grid-template-columns: auto;
+	    grid-template-areas: "header" "content" "footer";
       line-height: 1.5;
       margin: 0;
 
@@ -58,6 +73,9 @@ const GlobalStyles = () => (
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Merriweather', serif;
+      margin: 0 0 1.5em;
+      padding-bottom: 0;
+      padding-top: 0;
     }
     pre {
       padding: 1em;
@@ -89,8 +107,18 @@ const GlobalStyles = () => (
       color: var( --linkColor );
       transition: all 0.25s ease;
     }
+    div {
+      max-width: 100vw;
+    }
+    p {
+      margin: 0 0 1.5em;
+    }
     .link-shurl path {
       fill: var( --fillColor );
+
+      .light & {
+        --fillColor: #023451;
+      }
 
       .dark & {
         --fillColor: #eef8ff;
@@ -116,6 +144,21 @@ const GlobalStyles = () => (
     }
     [data-icon="twitter"] {
       --fillColor: #1da1f2;
+    }
+    .gallery {
+      margin: 0;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-gap: 20px;
+    }
+    .gallery-modal-overlay {
+      .dark & {
+        background-color: rgba( 255, 255, 255, 0.8 );
+      }
+      .light & {
+        background-color: rgba( 2, 52, 81, 0.8 );
+      }
     }
   ` } />
 );

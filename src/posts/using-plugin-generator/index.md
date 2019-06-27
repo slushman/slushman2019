@@ -1,7 +1,8 @@
 ---
 date: "2017-06-12"
 title: "Using the Plugin Generator"
-category: "WordPress Plugin Boilerplate"
+category: ["WordPress Plugin Boilerplate"]
+featuredImage: './ryo-yoshitake-nBgrySahBA8-unsplash.jpg'
 ---
 
 In the [previous post](https://www.slushman.com/post/understanding-the-loader-class) of the [WordPress Plugin Boilerplate series](https://www.slushman.com/post/guide-using-wordpress-plugin-boilerplate/), we explored the loader class and how to properly register hooks. In this post, we will begin developing the WP Starter Plugin by using the plugin generator.

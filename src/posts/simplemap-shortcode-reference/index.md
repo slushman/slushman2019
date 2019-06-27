@@ -1,7 +1,8 @@
 ---
 title: "SimpleMap Shortcode Reference"
 date: "2015-01-08"
-category: "Code Samples"
+category: ["Code Samples"]
+featuredImage: './capturing-the-human-heart-TrhLCn1abMU-unsplash.jpg'
 ---
 
 I've been using a plugin called SimpleMap for clients recently. SimpleMap creates a custom post type for managing locations (think store locations) and displays a Google Map with those locations. It also uses Google Map's radius search to help people find locations near them. Everything on the front-end is managed using a [shortcode](https://codex.wordpress.org/Shortcode). Practically every setting in SimpleMap can be overridden in the shortcode, which is really cool for us developers. Plus, they have tons of filters throughout, so any text or label can be customized for your usage. While the "Help" tab in the plugin settings shows you some of the options available with the shortcode, there are tons more and the documentation is practically non-existent. I'm putting this out there, at least for my own reference and I'll keep adding to it as I learn more and/or have time to expand it.

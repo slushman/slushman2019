@@ -2,10 +2,6 @@ import { shallowFactory } from '../../../testutils';
 
 import SEO from './SEO';
 
-/**
-  meta: PropTypes.array,
- */
-
 const defaultProps = {
 	author: '',
 	siteTitle: '',

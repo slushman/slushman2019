@@ -1,11 +1,5 @@
 import { css } from '@emotion/core';
 
-export const galleryGrid = css`
-	display: grid;
-`;
-
-export const galleryFigure = css``;
-
 export const galleryFigureModal = css`
 	align-items: center;
 	background-color: rgba( 0, 0, 0, 0.8 );
@@ -21,6 +15,40 @@ export const galleryFigureModal = css`
 	width: 100%;
 `;
 
+export const galleryGrid = css`
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: auto auto auto;
+	margin: 0;
+`;
+
+export const galleryImage = css`
+	display: block;
+	margin: 0;
+	transition: filter 0.3s;
+	vertical-align: middle;
+
+	&:hover {
+		filter: brightness(87.5%);
+	}
+`;
+
+export const twoAcross = css`
+	grid-template-columns: auto auto;
+`;
+
+export const threeAcross = css`
+	grid-template-columns: auto auto auto;
+`;
+
+export const fourAcross = css`
+	grid-template-columns: auto auto auto auto;
+`;
+
+export const fiveAcross = css`
+	grid-template-columns: auto auto auto auto auto;
+`;
+
 export const galleryModalButton = css`
 	color: #fff;
 	cursor: pointer;
@@ -29,14 +57,4 @@ export const galleryModalButton = css`
 	position: absolute;
 	right: 0.5em;
 	top: 0.5em;
-`;
-
-export const galleryImage = css`
-	display: block;
-	margin: 0;
-`;
-
-export const galleryCaption = css`
-	font-size: 0.875em;
-	font-style: italic;
 `;

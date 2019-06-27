@@ -16,5 +16,7 @@ export const logoImg = css`
 export const titleLink = css`
 	box-shadow: none;
 	color: inherit;
+	display: block;
+	text-align: center;
 	text-decoration: none;
 `;

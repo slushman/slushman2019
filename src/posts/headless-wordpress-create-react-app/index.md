@@ -1,7 +1,8 @@
 ---
 date: "2018-08-07"
 title: "Headless WordPress and Create React App"
-category: "Headless WordPress"
+category: ["Headless WordPress"]
+featuredImage: './john-mark-arnold-WItJTJsW97w-unsplash.jpg'
 ---
 
 You may have noticed the appearance of my site has changed a bit! A while back I decided to rebuild my site - finally. In the interest of learning new things, I created a headless WordPress theme using React.

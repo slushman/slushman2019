@@ -24,6 +24,9 @@
     "gatsby-plugin-sharp": "^2.0.6",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.4",
+    "gatsby-remark-images-grid": "^1.0.2",
+    "gatsby-remark-images-zoom": "^1.1.0",
+    "gatsby-remark-prismjs": "^3.2.9",
     "gatsby-remark-responsive-iframe": "^2.0.5",
     "gatsby-remark-smartypants": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.2",
@@ -36,12 +39,17 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
-    "react-toggle": "^4.0.2"
+    "react-medium-image-zoom": "^3.0.16",
+    "react-toggle": "^4.0.2",
+    "typeface-merriweather": "^0.0.72",
+    "typeface-source-sans-pro": "^0.0.54"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "babel-jest": "^24.7.1",
     "babel-preset-gatsby": "^0.1.11",
+    "dotenv": "^8.0.0",
+    "env-cmd": "^9.0.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^4.19.1",
@@ -62,12 +70,11 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"

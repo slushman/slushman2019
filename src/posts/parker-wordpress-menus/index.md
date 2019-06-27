@@ -1,7 +1,8 @@
 ---
 date: "2017-04-16"
 title: "Parker and WordPress Menus"
-category: "Parker"
+category: ["Parker"]
+featuredImage: './joe-mcdaniel-yLympaD0S4I-unsplash.jpg'
 ---
 
 As a sort-of follow up to my previous posts, I ran across an issue with styling menu items and found a great way to add classes so I can style those items directly.

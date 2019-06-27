@@ -1,7 +1,8 @@
 ---
 title: "How to Set Dashboard to Use One Column"
 date: "2011-08-11"
-category: "Code Samples"
+category: ["Code Samples"]
+featuredImage: './alex-read-VDrBOykRfHw-unsplash.jpg'
 ---
 
 I'm working on a plugin where I need the Dashboard to have one column for all users. While I could log into every user and change their Screen Options to one column, it would take next to forever with thousands of students accessing this site. Thankfully, I found this bit of code on [Stackexchange](https://wordpress.stackexchange.com/questions/4552/how-do-i-force-a-single-column-layout-in-screen-layout) (thanks sorich87!) and modified it for the Dashboard page. This will force all users to have one column on the Dashboard.

@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
 
 import Header from '../Header';
 import Footer from '../Footer';
 import GlobalStyles from './GlobalStyles';
 
 import {
-  contentWidth,
   layoutWrap,
+  postMain,
   styledMain,
 } from './layout-styles';
 
-const Layout = ( { children, location, title } ) => {
+const Layout = ( { children, isPost, location, title } ) => {
   return (
     <div css={ layoutWrap }>
       <GlobalStyles />
@@ -20,7 +19,7 @@ const Layout = ( { children, location, title } ) => {
         location={ location }
         title={ title }
       />
-      <main css={ styledMain }>
+      <main css={ isPost ? postMain: styledMain }>
         { children }
       </main>
       <Footer />
@@ -30,8 +29,13 @@ const Layout = ( { children, location, title } ) => {
 
 Layout.propTypes = {
   children: PropTypes.any,
+  isPost: PropTypes.bool,
   location: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+};
+
+Layout.defaultProps = {
+  isPost: false,
 };
 
 export default Layout;

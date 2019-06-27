@@ -1,34 +1,51 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/core';
 
-import {
-	galleryCaption,
-	galleryFigure,
-	galleryFigureModal,
-	galleryGrid,
-	galleryImage,
-	galleryModalButton,
-} from './gallery-styles';
+import GalleryImage from '../GalleryImage';
 
-const Gallery = ( { children } ) => {
-	const [modalVisible, setModalVisible] = React.useState(false);
-	const [modalImage, setModalImage] = React.useState(null);
+import { galleryGrid } from './gallery-styles';
 
-	const openModal = React.useCallback(id => event => {
-		setModalVisible( true );
-		setModalImage( id );
-	});
+const Gallery = ( {
+	columns,
+	images,
+} ) => {
+	if ( images.length < 1 ) return null;
 
-	const closeModal = React.useCallback(() => {
-		setModalVisible( false );
-		setModalImage( null );
-	});
+	const figureStyles = css`
+		${ galleryGrid }
+		grid-template-columns: 1fr;
+
+		@media screen and ( min-width: 550px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and ( min-width: 800px) {
+			grid-template-columns: ${ Array( columns ).fill( '1fr' ).join( ' ' ) };
+		}	
+	`;
 
 	return (
-		<div css={ galleryGrid }>
-			{children}
-		</div>
+		<figure css={ figureStyles }>
+			{
+				images.map( ( image, i ) => (
+					<GalleryImage
+						image={ image.node }
+						key={ i }
+					/>
+				) )
+			}
+		</figure>
 	)
 }
+
+Gallery.propTypes = {
+	columns: PropTypes.number,
+	images: PropTypes.array.isRequired,
+};
+
+Gallery.defaultProps = {
+	columns: 3,
+};
 
 export default Gallery;
