@@ -3,6 +3,8 @@ date: "2017-06-19"
 title: "Editing the README"
 category: ["WordPress Plugin Boilerplate"]
 featuredImage: './jehyun-sung-477894-unsplash.jpg'
+featuredImageAccount: 'jaysung'
+featuredImagePhotographer: 'Jehyun Sung'
 ---
 
 In the [previous post](https://www.slushman.com/post/using-plugin-generator/) of this [WordPress Plugin Boilerplate series](https://www.slushman.com/post/guide-using-wordpress-plugin-boilerplate/), we created the WP Starter Plugin using the plugin generator. However, before we begin developing, there is at least one thing we need to edit: the README file.

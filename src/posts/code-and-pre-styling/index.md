@@ -4,6 +4,8 @@ title: "Code Sample Styling"
 category: ["Design"]
 gallery: ["library","existing-ideas"]
 featuredImage: './markus-spiske-xekxE_VR0Ec-unsplash.jpg'
+featuredImageAccount: 'markusspiske'
+featuredImagePhotographer: 'Markus Spiske'
 ---
 
 I'm starting the process of redesigning this site. One of the components I have found most difficult to style are the code samples. Unfortunately, finding examples of what other people have done is not simple since googling words like code, HTML, CSS, styling, "code sample", and/or pre result in all kinds of randomness. So I thought it would be helpful to publish what I've found so far in case anyone else wants inspiration or to explore possibilities.

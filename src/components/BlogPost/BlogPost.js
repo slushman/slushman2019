@@ -11,13 +11,16 @@ import Shurls from '../Shurls';
 import Gallery from '../Gallery';
 import Codepen from '../Codepen';
 import Youtube from '../Youtube';
-import CategoryLinks from '../CategoryLinks';
+import CategoryMeta from '../CategoryMeta';
 
 import {
   alignRight,
   imageWrap,
   postDate,
   postImage,
+  postImageAuthor,
+  postImageCredit,
+  postImageIcon,
   postLinks,
   postMeta,
   postTitle,
@@ -30,12 +33,23 @@ const mdxComponents = {
   Youtube,
 };
 
-const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
+const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => {
+  console.log(post);
+  return (
   <Layout isPost={ true } location={ location } title={ siteTitle }>
     <SEO description={ post.excerpt } title={ post.frontmatter.title } />
     <div css={ postWrap }>
       <section css={ imageWrap }>
         <Image css={ postImage } sizes={ post.frontmatter.featuredImage.childImageSharp.sizes } />
+        <a css={ postImageCredit } href={ `https://unsplash.com/@${ post.frontmatter.featuredImageAccount }?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge` } target="_blank" rel="noopener noreferrer" title={ `Download free do whatever you want high-resolution photos from ${ post.frontmatter.featuredImagePhotographer }` }>
+          <span css={ postImageAuthor }>
+            <svg xmlns="http://www.w3.org/2000/svg" css={ postImageIcon } viewBox="0 0 32 32">
+              <title>unsplash-logo</title>
+              <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+            </svg>
+          </span>
+          <span css={ postImageAuthor }>{ post.frontmatter.featuredImagePhotographer }</span>
+        </a>
         <h1 css={ postTitle }>{ post.frontmatter.title }</h1>
       </section>
       <section css={ postMeta }>
@@ -45,7 +59,7 @@ const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
         >
           Published { post.frontmatter.date }
         </p>
-        <CategoryLinks categories={ post.frontmatter.category } />
+        <CategoryMeta categories={ post.frontmatter.category } />
       </section>
       <MDXRenderer
         className="postContent"
@@ -85,7 +99,7 @@ const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
       </section>
     </div>
   </Layout>
-);
+)};
 
 BlogPost.propTypes = {
   location: PropTypes.object.isRequired,

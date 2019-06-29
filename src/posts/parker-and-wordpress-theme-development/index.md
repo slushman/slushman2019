@@ -3,6 +3,8 @@ title: "Parker and WordPress Theme Development"
 date: "2016-10-23"
 category: ["Parker"]
 featuredImage: "./harry-grout-783332-unsplash.jpg"
+featuredImageAccount: 'harryjamesgrout'
+featuredImagePhotographer: 'Harry Grout'
 ---
 
 Lately, I've been playing with a CSS analysis tool called [Parker](https://github.com/katiefenn/parker) created by [Katie Fenn](https://twitter.com/katie_fenn). Parker examines your stylesheet and gives a treasure trove of metrics. While some of these metrics are merely interesting factoids (like the number of CSS rules), others offer constructive criticism for improvement. The general philosophy is to create more maintainable CSS by simplifying your stylesheet.

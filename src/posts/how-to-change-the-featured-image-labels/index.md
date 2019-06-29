@@ -3,6 +3,8 @@ title: "How to Change the Featured Image Labels"
 date: "2015-11-03"
 category: ["Code Samples"]
 featuredImage: './sneha-chekuri-ZTqaeeoBBl8-unsplash.jpg'
+featuredImageAccount: 'snehachekuri93'
+featuredImagePhotographer: 'Sneha Chekuri'
 ---
 
 When creating a site for a client or creating a plugin, I've found its helpful to customize things as much as possible to the intended usage. This is especially important for client work since most clients have specific terminology they use for things. In the case of Featured Images, the site or plugin might be using the featured image differently than how one might use it on a news or blog post.

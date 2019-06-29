@@ -3,6 +3,8 @@ title: "Installing Parker"
 date: "2016-10-24"
 category: ["Parker"]
 featuredImage: './t-h-chia-Ol4fpdX9dk0-unsplash.jpg'
+featuredImageAccount: 'teckhonc'
+featuredImagePhotographer: 'T.H. Chia'
 ---
 
 In my [introductory post](https://www.slushman.com/post/parker-and-wordpress-theme-development/), I shared about the CSS analysis tool named Parker. In this post, we'll cover installing Parker on your local machine so you are able to analyze your own code.

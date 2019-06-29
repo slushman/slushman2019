@@ -3,6 +3,8 @@ date: "2018-09-18"
 title: "Headless Theme for WordPress"
 category: ["Headless WordPress"]
 featuredImage: './lisa-nguyen-J0KBYb2v-Oo-unsplash.jpg'
+featuredImageAccount: 'lisanguyen'
+featuredImagePhotographer: 'Lisa Nguyen'
 ---
 
 In my previous [post about editor links](https://www.slushman.com/post/editor-links-for-headless-wordpress-themes), I showed how WordPress can create editor links using the live site URL instead of the WordPress URL. When I created a React app for my WordPress site, I run into two issues. First, I wanted to get as much data from WordPress as possible. Second, I want visitors to only view the React app, not the WordPress install. The solution for both of these problems lies in building a WordPress theme. Huh?

@@ -3,6 +3,8 @@ title: "Find User ID by User MetaData"
 date: "2011-07-25"
 category: ["Code Samples"]
 featuredImage: './david-pl-_WccNTUvnPU-unsplash.jpg'
+featuredImageAccount: 'd_dandelion'
+featuredImagePhotographer: 'david pl'
 ---
 
 I just wrote this useful function and thought I'd share. I'm working on a plugin for my employer, [Belmont University.](https://www.belmont.edu) I needed to find a user's ID by the user's barcode metadata. WordPress does not have a built-in function for this, but this custom function works nicely. Add it to your theme's functions.php file or to a plugin file (in my case, this is part of plugin). Here's the function:

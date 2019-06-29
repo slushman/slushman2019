@@ -3,6 +3,8 @@ title: "How to Add a Select Menu of Formidable Forms in Customizer"
 date: "2016-07-18"
 category: ["Code Samples"]
 featuredImage: './yan-xiong-p0D-4KFsuRA-unsplash.jpg'
+featuredImageAccount: 'bearock'
+featuredImagePhotographer: 'Yan Xiong'
 ---
 
 I recently had a need to list all the published Formidable forms as a select control in Customizer. Formidable doesn't spell out how to get this list, but I eventually stumbled on this method.

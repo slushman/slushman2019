@@ -3,6 +3,8 @@ title: "Six Steps to Secure Your WordPress Site"
 date: "2013-04-16"
 category: ["Security"]
 featuredImage: "./cristina-gottardi-192989-unsplash.jpg"
+featuredImageAccount: 'cristina_gottardi'
+featuredImagePhotographer: 'Cristina Gottardi'
 ---
 
 There's a great breakdancing move called 6-step. If you've seen breakdancing, you've probably seen this before, but, like me, didn't know what to call it. Basically, the dancer supports himself on his arms while moving his feet around in a circle. It's great for getting momentum and launching other moves.

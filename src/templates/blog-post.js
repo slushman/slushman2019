@@ -35,7 +35,9 @@ export const pageQuery = graphql`
                   ...GatsbyImageSharpSizes
               }
           }
-      }
+        }
+        featuredImageAccount
+        featuredImagePhotographer
       }
       code {
         body

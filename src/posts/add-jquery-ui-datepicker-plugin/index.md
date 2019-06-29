@@ -3,6 +3,8 @@ title: "How to Add the jQuery UI Datepicker to a Plugin"
 date: "2012-02-23"
 category: ["Code Samples"]
 featuredImage: "./rawpixel-633847-unsplash.jpg"
+featuredImageAccount: 'rawpixel'
+featuredImagePhotographer: 'rawpixel'
 ---
 
 **Updated - 4/14/2015**

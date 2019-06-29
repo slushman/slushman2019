@@ -3,6 +3,8 @@ date: "2017-06-05"
 title: "Understanding the Loader Class"
 category: ["WordPress Plugin Boilerplate"]
 featuredImage: './markus-spiske-0YKHHLXsp_0-unsplash.jpg'
+featuredImageAccount: 'markusspiske'
+featuredImagePhotographer: 'Markus Spiske'
 ---
 
 In the [previous post](https://www.slushman.com/post/the-structure-of…ugin-boilerplate/) of the [WordPress Plugin Boilerplate series](https://www.slushman.com/post/guide-using-wordpress-plugin-boilerplate/), we walked through the structure. We also examined each file and what they do. The biggest feature of the version 3 rewrite is the new loader class.

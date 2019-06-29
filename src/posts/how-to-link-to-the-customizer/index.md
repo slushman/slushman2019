@@ -3,6 +3,8 @@ title: "How to Link to the Customizer"
 date: "2016-06-02"
 category: ["Code Samples"]
 featuredImage: './scott-webb-51466-unsplash.jpg'
+featuredImageAccount: 'scottwebb'
+featuredImagePhotographer: 'Scott Webb'
 ---
 
 I recently needed to link to a custom panel in the Customizer and had to figure it out. [Devin Price](http://wptheming.com/2015/01/link-to-customizer-sections/) pointed me in the right direction, but I ended up looking in the WordPress core to see how they do it and this is how.

@@ -3,6 +3,8 @@ title: "The Structure of the WordPress Plugin Boilerplate"
 date: "2017-05-29"
 category: ["WordPress Plugin Boilerplate"]
 featuredImage: './alain-pham-P_qvsF7Yodw-unsplash.jpg'
+featuredImageAccount: 'alain_pham'
+featuredImagePhotographer: 'Alain Pham'
 ---
 
 In the [previous post](https://www.slushman.com/post/why-use-the-boilerplate) of the [WordPress Plugin Boilerplate series](https://www.slushman.com/post/guide-using-wordpress-plugin-boilerplate/), we looked at why one would use the boilerplate. This post will explore the organized structure in more detail.

@@ -3,6 +3,8 @@ date: "2017-05-21"
 title: "Why Use the Boilerplate?"
 category: ["WordPress Plugin Boilerplate"]
 featuredImage: './emily-morter-8xAA0f9yQnE-unsplash.jpg'
+featuredImageAccount: 'emilymorter'
+featuredImagePhotographer: 'Emily Morter'
 ---
 
 In the first post of the [WordPress Plugin Boilerplate series](https://www.slushman.com/post/guide-using-wordpress-plugin-boilerplate/), we covered the history of the project. In this post, we're going to address a common question. The first question both new and experienced developers ask about the boilerplate is: why should I use this? The boilerplate describes itself as "a standardized, organized, object-oriented foundation for building high-quality WordPress plugins." Here are at least five different ways the boilerplate helps when building plugins.

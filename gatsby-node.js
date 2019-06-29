@@ -1,6 +1,7 @@
 const path = require( `path` );
 const _ = require( 'lodash' );
 const { createFilePath } = require( `gatsby-source-filesystem` );
+const useSlugify = require( './src/hooks/slugifyModule' );
 
 exports.createPages = ( { graphql, actions } ) => {
   const { createPage } = actions;
@@ -67,7 +68,7 @@ exports.createPages = ( { graphql, actions } ) => {
 
     categories.forEach( category => {
       createPage( {
-        path: `/category/${ _.kebabCase( category ) }/`,
+        path: `/category/${ useSlugify( category ) }/`,
         component: categoryTemplate,
         context: {
           category,
