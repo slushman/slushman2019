@@ -1,9 +1,13 @@
 import { css } from '@emotion/core';
 
-import { blueSection, contentWidth } from '../Layout/GlobalStyles';
+import { blueSection } from '../Layout/GlobalStyles';
 
 export const link = css`
-	display: block;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 64px;
+	min-width: 64px;
 
 	&:hover {
 		cursor: pointer;
@@ -46,6 +50,25 @@ export const shareButton = css`
 		border-color: inherit;
 		--textColor: #fff;
 	}
+`;
+
+export const shurlList = css`
+	--gridFit: 25%;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax( var( --gridFit ) ,1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@media screen and ( min-width: 525px) {
+		--gridFit: 64px;
+	}
+`;
+
+export const shurlsListItem = css`
+	flex: 1 1 0;
+	text-align: center;
 `;
 
 export const shurlWrap = css`

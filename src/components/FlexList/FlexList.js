@@ -5,8 +5,8 @@ import {
 	StyledFlexList,
 } from './flexlist-styles';
 
-const FlexList = ( { children, spacing } ) => (
-	<StyledFlexList spacing={ spacing }>{ children }</StyledFlexList>
+const FlexList = ( { children, spacing, wrap } ) => (
+	<StyledFlexList spacing={ spacing } wrap={ wrap }>{ children }</StyledFlexList>
 );
 
 FlexList.propTypes = {

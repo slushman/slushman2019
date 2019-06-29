@@ -10,6 +10,7 @@ import IconTwitter from './Twitter';
 import {
 	link,
 	round,
+	shurlsListItem,
 } from './shurls-styles';
 
 const ShurlsList = ( { shareMedia, shareText, shareTitle, shareUrl, rounded } ) => {
@@ -55,7 +56,7 @@ const ShurlsList = ( { shareMedia, shareText, shareTitle, shareUrl, rounded } ) 
 
 	return (
 		shurlLinks.map( ( link, i ) => (
-			<li key={ i }>
+			<li css={ shurlsListItem } key={ i }>
 				<a
 					className="link-shurl"
 					css={ linkStyles }

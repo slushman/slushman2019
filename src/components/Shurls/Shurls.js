@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FlexList from '../FlexList';
 import ShurlsList from './ShurlsList';
 import NativeShare from './NativeShare';
 import { shurlWrap } from './shurls-styles';
+
+import {
+	shurlList,
+	wrap,
+} from './shurls-styles';
 
 const Shurls = ( { postNode, rounded } ) => {
 	const post = postNode.frontmatter;
@@ -37,9 +41,9 @@ const Shurls = ( { postNode, rounded } ) => {
 	return (
 		<section css={ shurlWrap }>
 			<h2>Share this post!</h2>
-			<FlexList spacing="space-around">
+			<ul css={ shurlList }>
 				{output}
-			</FlexList>
+			</ul>
 		</section>
 	);
 };
