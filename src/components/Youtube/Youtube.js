@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
  * @param {array} parameters Array of parameter objects
  * @return {string}
  */
-export const returnUrlParameterString = ( parameters ) => {
+export const returnUrlParameterString = parameters => {
 	if ( parameters.length < 1 ) return '';
 	return parameters.map( ( parameter, i ) => {
 		return `${ encodeURIComponent( parameter.name ) }=${ encodeURIComponent( parameter.value ) }`;
 	} ).join('&');
-}
+};
 
 export const defaultHeight = 315;
 export const defaultIvLoadPolicy = 1;
@@ -155,4 +155,4 @@ Youtube.defaultProps = {
 	width: defaultWidth,
 };
 
-export default Youtube;
+export default React.memo(Youtube);

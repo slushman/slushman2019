@@ -53,23 +53,23 @@ describe('Youtube', () => {
 		expect(wrapper.exists()).toBe(true);
 		expect(url.indexOf('autoplay')).toBeLessThan(0);
 		expect(url.indexOf('cc_load_policy')).toBeLessThan(0);
-		expect(url.indexOf('color=red')).toBeGreaterThan(1);
-		expect(url.indexOf('controls')).toBeGreaterThan(1);
+		expect(url.indexOf('color=undefined')).toBeGreaterThan(1);
+		expect(url.indexOf('controls')).toBeLessThan(0);
 		expect(url.indexOf('disablekb')).toBeLessThan(0);
 		expect(url.indexOf('enablejsapi')).toBeLessThan(0);
 		expect(url.indexOf('end')).toBeLessThan(0);
-		expect(url.indexOf('fs')).toBeGreaterThan(1);
-		expect(foundHeight).toBe(defaultHeight);
-		expect(url.indexOf('hl')).toBeLessThan(0);
-		expect(url.indexOf('iv_load_policy')).toBeLessThan(0);
-		expect(url.indexOf('list')).toBeLessThan(0);
-		expect(url.indexOf('listType')).toBeLessThan(0);
+		expect(url.indexOf('fs')).toBeLessThan(0);
+		expect(foundHeight).not.toBeDefined();
+		expect(url.indexOf('hl')).toBeGreaterThan(1);
+		expect(url.indexOf('iv_load_policy')).toBeGreaterThan(1);
+		expect(url.indexOf('list')).toBeGreaterThan(1);
+		expect(url.indexOf('listType')).toBeGreaterThan(1);
 		expect(url.indexOf('loop')).toBeLessThan(0);
 		expect(url.indexOf('modestbranding')).toBeLessThan(0);
-		expect(url.indexOf('playlist')).toBeLessThan(0);
+		expect(url.indexOf('playlist')).toBeGreaterThan(1);
 		expect(url.indexOf('playsinline')).toBeLessThan(0);
 		expect(url.indexOf('start')).toBeLessThan(0);
-		expect(foundWidth).toBe(defaultWidth);
+		expect(foundWidth).not.toBeDefined();
 	});
 
 	describe('when given autoplay is true', () => {
@@ -206,7 +206,7 @@ describe('Youtube', () => {
 			const url = wrapper.prop('src');
 
 			expect(url.indexOf(`list=${ givenList }`)).toBeGreaterThan(1);
-			expect(url.indexOf(`listType=${ listTypeOptions[1] }`)).toBeGreaterThan(1);
+			expect(url.indexOf(`listType=${ listTypeOptions[1] }`)).toBeLessThan(0);
 		});
 	});
 

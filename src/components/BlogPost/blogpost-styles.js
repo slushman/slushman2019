@@ -9,6 +9,10 @@ export const alignRight = css`
 	text-align: right;
 `;
 
+export const half = css`
+	flex: 50%;
+`;
+
 export const imageWrap = css`
 	position: relative;
 
@@ -129,5 +133,27 @@ export const postWrap = css`
 		${ contentWidth }
 
 		margin: 0 0 1.5em;
+	}
+
+	& > div ul {
+		--pad: 2.5em;
+
+	  padding-left: var( --pad );
+	
+		@media screen and (min-width: 50rem) {
+			--pad: calc(100vw/2 - 50rem/2 + 1.5em);
+		}
+	}
+
+	& > div > ul li a {
+		--lineHeight: 2.25;
+
+		display: inline-block;
+		line-height: var( --lineHeight );
+		min-width: 48px;
+
+		@media screen and ( min-width: 50rem ) {
+			--lineHeight: 1.5;
+		}
 	}
 `;

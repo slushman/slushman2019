@@ -23,6 +23,18 @@ const defaultProps = {
 			slug: '',
 		},
 		frontmatter: {
+			featuredImage: {
+				childImageSharp: {
+					sizes: {
+						aspectRatio: 0,
+						sizes: '',
+						src: '',
+						srcSet: '',
+					},
+				},
+			},
+			featuredImageAccount: '',
+			featuredImagePhotographer: '',
 			category: [],
 			date: '',
 			title: '',
@@ -130,20 +142,33 @@ describe('<BlogPost />', () => {
 	});
 
 	describe('when given a post object', () => {
-		it('should render the previous Link with the expected to and slug', () => {
-			const givenPost = {
-				code: {
-					body: 'oabflbndkjfgb',
+		const givenPost = {
+			code: {
+				body: 'oabflbndkjfgb',
+			},
+			excerpt: 'tqcwhgwvdc',
+			fields: {
+				slug: 'ohnpotkhmn',
+			},
+			frontmatter: {
+				date: 'sdgwf',
+				featuredImage: {
+					childImageSharp: {
+						sizes: {
+							aspectRatio: 0,
+							sizes: 'ksfljdsnf',
+							src: 'sbfksjbf',
+							srcSet: 'ksbvsdjnfb',
+						},
+					},
 				},
-				excerpt: 'tqcwhgwvdc',
-				fields: {
-					slug: 'ohnpotkhmn',
-				},
-				frontmatter: {
-					date: 'sdgwf',
-					title: 'asfbdfgb',
-				},
-			};
+				featuredImageAccount: 'slushman',
+				featuredImagePhotographer: 'Slushman',
+				title: 'asfbdfgb',
+			},
+		};
+
+		it('should render with given post info', () => {
 			const wrapper = factory({
 				post: givenPost,
 			});
@@ -157,6 +182,24 @@ describe('<BlogPost />', () => {
 			expect(foundH1.prop('children')).toBe(givenPost.frontmatter.title);
 			expect(foundPostDate.prop('children')[1]).toBe(givenPost.frontmatter.date);
 			expect(foundContent.prop('children')).toBe(givenPost.code.body);
+		});
+
+		it('should render the image with the given post image info', () => {
+			const wrapper = factory({
+				post: givenPost,
+			});
+			const foundImage = wrapper.find('Image');
+			const foundImageLink = wrapper.find('[data-test="imageLink"]');
+			const foundPhotographer = wrapper.find('[data-test="photographer"]');
+
+			expect(foundImage.exists()).toBe(true);
+			expect(foundImageLink.exists()).toBe(true);
+			expect(foundImageLink.prop('href')).toEqual(
+				expect.stringContaining(givenPost.frontmatter.featuredImageAccount)
+			);
+			
+			expect(foundPhotographer.exists()).toBe(true);
+			expect(foundPhotographer.prop('children')).toBe(givenPost.frontmatter.featuredImagePhotographer);
 		});
 	});
 });

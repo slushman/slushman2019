@@ -42,6 +42,16 @@ describe('<BlogIndex />', () => {
 				},
 				frontmatter: {
 					date: 'afbdb',
+					featuredImage: {
+						childImageSharp: {
+							sizes: {
+								aspectRatio: 0,
+								sizes: '',
+								src: '',
+								srcSet: '',
+							},
+						},
+					},
 					title: 'fgmnfhm',
 				},
 			};
@@ -52,6 +62,16 @@ describe('<BlogIndex />', () => {
 				},
 				frontmatter: {
 					date: 'srjtyhm',
+					featuredImage: {
+						childImageSharp: {
+							sizes: {
+								aspectRatio: 0,
+								sizes: '',
+								src: '',
+								srcSet: '',
+							},
+						},
+					},
 					title: 'fhmghm',
 				},
 			};

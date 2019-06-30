@@ -16,6 +16,7 @@ export const categoryTitle = css`
 	${ contentWidth }
 
 	margin: 0;
+	text-align: center;
 `;
 
 export const viewCategories = css`

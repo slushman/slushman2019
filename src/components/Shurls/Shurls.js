@@ -6,8 +6,8 @@ import NativeShare from './NativeShare';
 import { shurlWrap } from './shurls-styles';
 
 import {
+	shurlHeader,
 	shurlList,
-	wrap,
 } from './shurls-styles';
 
 const Shurls = ( { postNode, rounded } ) => {
@@ -40,7 +40,7 @@ const Shurls = ( { postNode, rounded } ) => {
 
 	return (
 		<section css={ shurlWrap }>
-			<h2>Share this post!</h2>
+			<h2 css={ shurlHeader }>Share this post!</h2>
 			<ul css={ shurlList }>
 				{output}
 			</ul>

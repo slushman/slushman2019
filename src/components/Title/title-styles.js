@@ -8,7 +8,7 @@ export const logoImg = css`
 	transition: width 1s ease;
 	width: var( --width );
 
-	@media screen and (min-width: 525px) {
+	@media screen and (min-width: 550px) {
 		--width: 300px;
 	}
 `;

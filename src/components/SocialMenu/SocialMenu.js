@@ -12,29 +12,24 @@ import {
 	menuList,
 } from './socialmenu-styles';
 
-const sizeProps = {
-	height: 36,
-	width: 36,
-};
-
 const SocialMenu = () => (
 	<nav>
 		<ul css={ menuList }>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://github.com/slushman">
-					<Github {...sizeProps} />
+					<Github />
 					<p css={ linkLabel }>GitHub</p>
 				</a>
 			</li>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://www.linkedin.com/in/chriswilcoxson/">
-					<LinkedIn {...sizeProps} />
+					<LinkedIn />
 					<p css={ linkLabel }>LinkedIn</p>
 				</a>
 			</li>
 			<li css={ menuItem }>
 				<a css={ linkStyle } href="https://www.slushman.com/rss.xml">
-					<RSS {...sizeProps} />
+					<RSS />
 					<p css={ linkLabel }>RSS</p>
 				</a>
 			</li>
@@ -42,4 +37,4 @@ const SocialMenu = () => (
 	</nav>
 );
 
-export default SocialMenu;
+export default React.memo(SocialMenu);

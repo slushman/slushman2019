@@ -6,7 +6,8 @@ import Codepen, {
 } from './Codepen';
 
 const defaultProps = {
-	id: 'bMMKrb',
+  id: 'bMMKrb',
+  title: '',
 };
 const factory = shallowFactory(Codepen, defaultProps);
 
@@ -112,6 +113,20 @@ describe('<Codepen />', () => {
 
       expect(foundIframe.exists()).toBe(true);
       expect(foundIframe.prop('width')).toBe(givenWidth);
+    });
+  });
+
+  describe('when given a title', () => {
+    it('should render with the given title', () => {
+      const givenTitle = 'kjbdsfkjbndfkb';
+      const wrapper = factory({
+        id: 'bMMKrb',
+        title: givenTitle,
+      });
+      const foundIframe = wrapper.find('Styled(iframe)');
+
+      expect(foundIframe.exists()).toBe(true);
+      expect(foundIframe.prop('title')).toBe(givenTitle);
     });
   });
 });

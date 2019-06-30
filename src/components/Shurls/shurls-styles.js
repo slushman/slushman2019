@@ -52,6 +52,10 @@ export const shareButton = css`
 	}
 `;
 
+export const shurlHeader = css`
+	margin-bottom: 0;
+`;
+
 export const shurlList = css`
 	--gridFit: 25%;
 

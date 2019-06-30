@@ -5,9 +5,6 @@ import { Link } from 'gatsby';
 import Layout from '../Layout';
 import Post from '../../components/Post';
 import SEO from '../SEO';
-import {
-	contentWidth,
-} from '../Layout/GlobalStyles';
 import { postsWrap } from '../../pages/BlogIndex/blog-index-styles';
 import {
 	categoryHeader,
@@ -15,9 +12,9 @@ import {
 	viewCategories,
 } from './category-list-styles';
 
-const CategoryList = ( { categories, category, location, siteTitle, total } ) => {
+const CategoryList = ( { category, location, posts, siteTitle, total } ) => {
 	const plural = total === 1 ? '' : 's';
-  const categoryName = `${ total } ${ category } post${ plural }`;
+  const categoryName = `${ category } post${ plural }`;
 
   return (
 		<Layout isPost={ true } location={ location } title={ siteTitle }>
@@ -25,11 +22,12 @@ const CategoryList = ( { categories, category, location, siteTitle, total } ) =>
 				<h1 css={ categoryTitle }>{ categoryName }</h1>
 			</section>
 			<div css={ postsWrap }>
-				{ categories.map( ( { node } ) => {
+				{ posts.map( ( { node } ) => {
 					return (
 						<Post
 							date={ node.frontmatter.date }
 							excerpt={ node.excerpt }
+							image={ node.frontmatter.featuredImage }
 							key={ node.fields.slug }
 							slug={ node.fields.slug }
 							title={ node.frontmatter.title || node.fields.slug }
@@ -45,7 +43,9 @@ const CategoryList = ( { categories, category, location, siteTitle, total } ) =>
 };
 
 CategoryList.propTypes = {
-	categories: PropTypes.arrayOf(
+	category: PropTypes.string.isRequired,
+	location: PropTypes.object.isRequired,
+	posts: PropTypes.arrayOf(
 		PropTypes.shape( {
 			node: PropTypes.shape( {
 				frontmatter: PropTypes.shape( {
@@ -58,8 +58,6 @@ CategoryList.propTypes = {
 			} ),
 		} ).isRequired
 	),
-	category: PropTypes.string.isRequired,
-	location: PropTypes.object.isRequired,
 	siteTitle: PropTypes.string.isRequired,
 	total: PropTypes.number.isRequired,
 };

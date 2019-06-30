@@ -5,6 +5,16 @@ import Post from './Post';
 const defaultProps = {
 	date: '',
 	excerpt: '',
+	image: {
+		childImageSharp: {
+			sizes: {
+				aspectRatio: 0,
+				sizes: '',
+				src: '',
+				srcSet: '',
+			},
+		},
+	},
 	slug: '',
 	title: '',
 };
@@ -70,6 +80,28 @@ describe('<Post />', () => {
 
 			expect(foundLink.exists()).toBe(true);
 			expect(foundLink.prop('children')).toBe(givenTitle);
+		});
+	});
+
+	describe('when given an image', () => {
+		it('should render with the given image', () => {
+			const givenImage = {
+				childImageSharp: {
+					sizes: {
+						aspectRatio: 0,
+						sizes: 'ksfljdsnf',
+						src: 'sbfksjbf',
+						srcSet: 'ksbvsdjnfb',
+					},
+				},
+			};
+			const wrapper = factory({
+				image: givenImage,
+			});
+			const foundImage = wrapper.find('Image');
+
+			expect(foundImage.exists()).toBe(true);
+			expect(foundImage.prop('sizes')).toBe(givenImage.childImageSharp.sizes);
 		});
 	});
 });

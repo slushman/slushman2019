@@ -17,6 +17,7 @@ const Codepen = ( {
 	id,
 	tab,
 	theme,
+	title,
 	user,
 	width,
 } ) => {
@@ -34,6 +35,7 @@ const Codepen = ( {
 					height={ height } 
 					scrolling="no" 
 					src={ src }
+					title={ title }
 					width={ width } 
 				>
 					<a href={ pen }>See this pen</a> by { user } (<a href={ userUrl }>@{ user }</a>) on <a href='http://codepen.io'>CodePen</a>.
@@ -61,7 +63,8 @@ Codepen.propTypes = {
   height: PropTypes.string,
   id: PropTypes.string.isRequired,
   tab: isValidTab,
-  theme: PropTypes.string,
+	theme: PropTypes.string,
+	title: PropTypes.string.isRequired,
   user: PropTypes.string,
   width:  PropTypes.string,
 };

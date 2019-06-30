@@ -28,7 +28,6 @@ describe('<GalleryImage />', () => {
 		const image = wrapper.find('ImageZoom');
 
 		expect(wrapper.exists()).toBe(true);
-		expect(wrapper.prop('href')).toBe(defaultProps.image.relativePath);
 		expect(image.exists()).toBe(true);
 		expect(image.prop('image').src).toBe(defaultProps.image.childImageSharp.fluid.src);
 	});
@@ -55,7 +54,6 @@ describe('<GalleryImage />', () => {
 
 			const image = wrapper.find('ImageZoom');
 
-			expect(wrapper.prop('href')).toBe(givenImage.relativePath);
 			expect(image.exists()).toBe(true);
 			expect(image.prop('image').src).toBe(givenImage.childImageSharp.fluid.src);
 		});

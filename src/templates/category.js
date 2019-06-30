@@ -17,9 +17,9 @@ const CategoryTemplate = ( { data, location, pageContext } ) => {
 
 	return (
 		<CategoryList
-			categories={ data.allMdx.edges }
 			category={ pageContext.category }
 			location={ location }
+			posts={ data.allMdx.edges }
 			siteTitle={ siteTitle }
 			total={ data.allMdx.totalCount }
 		/>
@@ -68,6 +68,13 @@ export const pageQuery = graphql`
 					}
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
+						featuredImage {
+							childImageSharp{
+									sizes(maxWidth: 1200) {
+											...GatsbyImageSharpSizes
+									}
+							}
+						}
 						title
 					}
         }

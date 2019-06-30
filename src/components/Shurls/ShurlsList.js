@@ -1,12 +1,12 @@
 import React from 'react';
 
-import IconEmail from './Email';
-import IconFacebook from './Facebook';
-import IconLinkedIn from './Linkedin';
-import IconPinterest from './Pinterest';
-import IconStumbleupon from './Stumbleupon';
-import IconTumblr from './Tumblr';
-import IconTwitter from './Twitter';
+import IconEmail from '../SVGs/Email';
+import IconFacebook from '../SVGs/Facebook';
+import IconLinkedIn from '../SVGs/Linkedin';
+import IconPinterest from '../SVGs/Pinterest';
+import IconStumbleupon from '../SVGs/Stumbleupon';
+import IconTumblr from '../SVGs/Tumblr';
+import IconTwitter from '../SVGs/Twitter';
 import {
 	link,
 	round,
@@ -14,7 +14,6 @@ import {
 } from './shurls-styles';
 
 const ShurlsList = ( { shareMedia, shareText, shareTitle, shareUrl, rounded } ) => {
-	
 	const linkStyles = rounded ? [ round, link ] : [ link ];
 	const shurlLinks = [
 		{
@@ -62,6 +61,7 @@ const ShurlsList = ( { shareMedia, shareText, shareTitle, shareUrl, rounded } ) 
 					css={ linkStyles }
 					data-test={ link.dataTest }
 					href={ link.url }
+					rel="noopener noreferrer"
 					target="_blank"
 				>
 					{ link.component }

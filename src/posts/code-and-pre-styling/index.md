@@ -62,7 +62,7 @@ As you can see, in Chrome the only styling appears to be a monospaced font and a
 
 Here's a CodePen showing the basic styling for each of these examples (except the line numbers):
 
-<Codepen height="600px" id="bMMKrb" />
+<Codepen height="600px" id="bMMKrb" title="Styling Code Samples" />
 
 ### Results for Existing Ideas
 

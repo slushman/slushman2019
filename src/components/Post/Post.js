@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import {
 	postHeading2,
+	postImage,
 	postLink,
 	postWrap,
 } from './post-styles';
 
-const Post = ( { date, excerpt, slug, title } ) => (
+const Post = ( { date, excerpt, image, slug, title } ) => (
 	<article css={ postWrap } key={ slug }>
+		<Image css={ postImage } sizes={ image.childImageSharp.sizes } />
 		<h2 css={ postHeading2 }>
 			<Link 
 				css={ postLink }
@@ -26,6 +29,7 @@ const Post = ( { date, excerpt, slug, title } ) => (
 Post.propTypes = {
 	date: PropTypes.string.isRequired,
 	excerpt: PropTypes.string.isRequired,
+	image: PropTypes.object.isRequired,
 	slug: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 };
