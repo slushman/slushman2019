@@ -20,4 +20,4 @@ Share.defaultProps = {
 	width: 36,
 }
 
-export default Share;
+export default React.memo(Share);

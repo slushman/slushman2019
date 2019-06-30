@@ -128,4 +128,4 @@ BlogPost.defaultProps = {
   scope: {},
 };
 
-export default BlogPost;
+export default React.memo(BlogPost);

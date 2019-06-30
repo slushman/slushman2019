@@ -25,4 +25,4 @@ Footer.propTypes = {
 	title: PropTypes.string.isRequired,
 };
 
-export default Footer;
+export default React.memo(Footer);

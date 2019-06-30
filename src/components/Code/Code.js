@@ -54,4 +54,4 @@ Code.defaultProps = {
   'react-live': false,
 };
 
-export default Code;
+export default React.memo(Code);

@@ -71,4 +71,4 @@ const ShurlsList = ( { shareMedia, shareText, shareTitle, shareUrl, rounded } ) 
 	);
 }
 
-export default ShurlsList;
+export default React.memo(ShurlsList);

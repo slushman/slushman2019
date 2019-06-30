@@ -21,4 +21,4 @@ const CategoryMeta = ( { categories } ) => (
 	</ul>
 )
 
-export default CategoryMeta;
+export default React.memo(CategoryMeta);

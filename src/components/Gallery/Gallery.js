@@ -48,4 +48,4 @@ Gallery.defaultProps = {
 	columns: 3,
 };
 
-export default Gallery;
+export default React.memo(Gallery);

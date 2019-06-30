@@ -62,4 +62,4 @@ CategoryList.propTypes = {
 	total: PropTypes.number.isRequired,
 };
 
-export default CategoryList;
+export default React.memo(CategoryList);

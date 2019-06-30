@@ -32,4 +32,4 @@ Bio.defaultProps = {
   isHeader: false,
 };
 
-export default Bio;
+export default React.memo(Bio);

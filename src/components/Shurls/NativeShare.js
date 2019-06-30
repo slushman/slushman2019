@@ -40,4 +40,4 @@ NativeShare.defaultProps = {
 	shareUrl: '',
 };
 
-export default NativeShare;
+export default React.memo(NativeShare);

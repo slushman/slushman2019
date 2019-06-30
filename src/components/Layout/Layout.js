@@ -38,4 +38,4 @@ Layout.defaultProps = {
   isPost: false,
 };
 
-export default Layout;
+export default React.memo(Layout);

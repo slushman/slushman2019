@@ -20,4 +20,4 @@ CategoryLink.propTypes = {
 	value: PropTypes.string.isRequired,
 }
 
-export default CategoryLink;
+export default React.memo(CategoryLink);

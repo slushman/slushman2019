@@ -78,4 +78,4 @@ Codepen.defaultProps = {
   width: defaultWidth,
 };
 
-export default Codepen;
+export default React.memo(Codepen);

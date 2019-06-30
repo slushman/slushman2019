@@ -34,4 +34,4 @@ Post.propTypes = {
 	title: PropTypes.string.isRequired,
 };
 
-export default Post;
+export default React.memo(Post);

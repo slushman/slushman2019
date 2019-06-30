@@ -14,4 +14,4 @@ FlexList.propTypes = {
 	spacing: PropTypes.oneOf(['center', 'flex-end', 'flex-start', 'space-around', 'space-between', 'space-evenly']),
 };
 
-export default FlexList;
+export default React.memo(FlexList);

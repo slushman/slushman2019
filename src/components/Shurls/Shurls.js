@@ -57,4 +57,4 @@ Shurls.defaultProps = {
 	rounded: false,
 }
 
-export default Shurls;
+export default React.memo(Shurls);
