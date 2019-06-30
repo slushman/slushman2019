@@ -20,7 +20,6 @@ const Header = ( { location, title } ) => {
 	const rootPath = `${ __PATH_PREFIX__ }/`;
 	const isHome = location.pathname === rootPath;
 	const themeContext = React.useContext( ThemeContext );
- 	const themeLabel = themeContext.theme === 'dark' ? 'Dark theme' : 'Light theme';
 	let output = '';
 
 	const handleChange = React.useCallback( event => {
@@ -47,7 +46,7 @@ const Header = ( { location, title } ) => {
 			<div css={ headerWrap }>
 				{ output }
 				<label css={ toggleLabel }>
-					<span css={ toggleText }>{ themeLabel }</span>
+					<span css={ toggleText }>Dark theme</span>
 					<Toggle
 						checked={ themeContext.theme === 'dark' }
 						css={ toggle }
