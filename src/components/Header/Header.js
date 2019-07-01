@@ -5,6 +5,7 @@ import 'react-toggle/style.css';
 
 import Title from '../Title';
 import Bio from '../Bio';
+import MainMenu from '../MainMenu';
 import {
 	header,
 	headerWrap,
@@ -54,7 +55,8 @@ const Header = ( { location, title } ) => {
 					/>
 				</label>
 			</div>
-		{ isHome && <Bio isHeader={ true } /> }
+			<MainMenu />
+			{ isHome && <Bio isHeader={ true } /> }
 		</header>
 	);
 }
