@@ -189,17 +189,10 @@ describe('<BlogPost />', () => {
 				post: givenPost,
 			});
 			const foundImage = wrapper.find('Image');
-			const foundImageLink = wrapper.find('[data-test="imageLink"]');
-			const foundPhotographer = wrapper.find('[data-test="photographer"]');
+			const foundImageCredit = wrapper.find('ImageCredit');
 
 			expect(foundImage.exists()).toBe(true);
-			expect(foundImageLink.exists()).toBe(true);
-			expect(foundImageLink.prop('href')).toEqual(
-				expect.stringContaining(givenPost.frontmatter.featuredImageAccount)
-			);
-			
-			expect(foundPhotographer.exists()).toBe(true);
-			expect(foundPhotographer.prop('children')).toBe(givenPost.frontmatter.featuredImagePhotographer);
+			expect(foundImageCredit.exists()).toBe(true);
 		});
 	});
 });

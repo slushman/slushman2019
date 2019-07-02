@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import Layout from '../Layout';
 import Post from '../../components/Post';
 import SEO from '../SEO';
-import { postsWrap } from '../../pages/BlogIndex/blog-index-styles';
+import { postsWrap } from '../BlogIndex/blog-index-styles';
 import {
 	categoryHeader,
 	categoryTitle,

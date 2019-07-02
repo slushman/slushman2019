@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import BlogIndex from './BlogIndex';
+import BlogIndex from '../components/BlogIndex';
 import useSiteMetadata from '../hooks/UseSiteMetadata';
 
 const QueryBlogIndex = ( { data, location } ) => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { graphql } from 'gatsby';
 import useSiteMetadata from '../hooks/UseSiteMetadata';
-import CategoryPage from './CategoryPage';
+import CategoryPage from '../components/CategoryPage';
 
 const QueryCategory = ( { data: { allMdx: { group } } } ) => {
   const { siteTitle } = useSiteMetadata();

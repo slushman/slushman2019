@@ -10,11 +10,11 @@ import {
 	shurlList,
 } from './shurls-styles';
 
-const Shurls = ( { postNode, rounded } ) => {
+const Shurls = ( { location, postNode, rounded } ) => {
 	const post = postNode.frontmatter;
 	const currentExcerpt = escape( post.excerpt );
 	const currentMedia = post.media ? post.media : null;
-	const currentUrl = window.location.href;
+	const currentUrl = location.href;
 	const currentTitle = escape( post.title );
 	let output;
 
@@ -49,7 +49,31 @@ const Shurls = ( { postNode, rounded } ) => {
 };
 
 Shurls.propTypes = {
-	postNode: PropTypes.object.isRequired,
+	location: PropTypes.shape({
+		ancestorOrigins: PropTypes.object,
+		assign: PropTypes.func,
+		hash: PropTypes.string,
+		host: PropTypes.string,
+		href: PropTypes.string,
+		key: PropTypes.string,
+		origin: PropTypes.string,
+		pathname: PropTypes.string,
+		port: PropTypes.string,
+		protocol: PropTypes.string,
+		reload: PropTypes.func,
+		replace: PropTypes.func,
+		search: PropTypes.string,
+		state: PropTypes.object,
+		toString: PropTypes.func,
+	}).isRequired,
+	postNode: PropTypes.shape({
+		code: PropTypes.shape({
+			body: PropTypes.string,
+		}),
+		excerpt: PropTypes.string,
+		frontmatter: PropTypes.object,
+		id: PropTypes.string,
+	}).isRequired,
 	rounded: PropTypes.bool,
 };
 

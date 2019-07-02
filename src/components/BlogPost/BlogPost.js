@@ -12,6 +12,7 @@ import Gallery from '../Gallery';
 import Codepen from '../Codepen';
 import Youtube from '../Youtube';
 import CategoryMeta from '../CategoryMeta';
+import ImageCredit from '../ImageCredit';
 
 import {
   alignRight,
@@ -19,9 +20,6 @@ import {
   imageWrap,
   postDate,
   postImage,
-  postImageAuthor,
-  postImageCredit,
-  postImageIcon,
   postLinks,
   postMeta,
   postTitle,
@@ -40,15 +38,10 @@ const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
     <div css={ postWrap }>
       <section css={ imageWrap }>
         <Image css={ postImage } sizes={ post.frontmatter.featuredImage.childImageSharp.sizes } />
-        <a css={ postImageCredit } data-test="imageLink" href={ `https://unsplash.com/@${ post.frontmatter.featuredImageAccount }?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge` } target="_blank" rel="noopener noreferrer" title={ `Download free do whatever you want high-resolution photos from ${ post.frontmatter.featuredImagePhotographer }` }>
-          <span css={ postImageAuthor }>
-            <svg xmlns="http://www.w3.org/2000/svg" css={ postImageIcon } viewBox="0 0 32 32">
-              <title>unsplash-logo</title>
-              <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-            </svg>
-          </span>
-          <span css={ postImageAuthor } data-test="photographer">{ post.frontmatter.featuredImagePhotographer }</span>
-        </a>
+        <ImageCredit
+          account={ post.frontmatter.featuredImageAccount }
+          photographer={ post.frontmatter.featuredImagePhotographer }
+        />
         <h1 css={ postTitle }>{ post.frontmatter.title }</h1>
       </section>
       <section css={ postMeta }>
@@ -67,8 +60,7 @@ const BlogPost = ( { location, next, post, previous, scope, siteTitle } ) => (
       >
         { post.code.body }
       </MDXRenderer>
-      <Shurls postNode={ post } />
-
+      <Shurls location={ location } postNode={ post } />
       <section css={ postLinks }>
         <h2>Read more posts!</h2>
         <FlexList spacing="space-between">
