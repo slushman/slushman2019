@@ -11,14 +11,13 @@ import {
 } from './shurls-styles';
 
 const Shurls = ( { location, postNode, rounded } ) => {
-	const post = postNode.frontmatter;
-	const currentExcerpt = escape( post.excerpt );
-	const currentMedia = post.media ? post.media : null;
+	const currentExcerpt = escape( postNode.excerpt );
+	const currentMedia = postNode.media ? postNode.media : null;
 	const currentUrl = location.href;
-	const currentTitle = escape( post.title );
+	const currentTitle = escape( postNode.title );
 	let output;
 
-	if (navigator.share) {
+	if ( navigator.share ) {
 		output = (
 			<NativeShare
 				shareText={ currentExcerpt }
@@ -42,7 +41,7 @@ const Shurls = ( { location, postNode, rounded } ) => {
 		<section css={ shurlWrap }>
 			<h2 css={ shurlHeader }>Share this post!</h2>
 			<ul css={ shurlList }>
-				{output}
+				{ output }
 			</ul>
 		</section>
 	);
