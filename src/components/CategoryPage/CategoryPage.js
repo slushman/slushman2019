@@ -6,6 +6,7 @@ import { css } from '@emotion/core';
 import Layout from '../Layout';
 import SEO from '../SEO';
 import CategoryLink from '../CategoryLink';
+import ImageCredit from '../ImageCredit';
 
 import {
 	categoryImage,
@@ -19,7 +20,7 @@ import headerImage from './ferdinand-stohr-NFs6dRTBgaM-unsplash.jpg';
 
 
 const CategoryPage = ({ categories, title }) => (
-	<Layout location={ location } title={ title }>
+	<Layout title={ title }>
 		<SEO
 			title="All categories"
 			keywords={ [ `blog`, `gatsby`, `javascript`, `react` ] }
@@ -48,7 +49,7 @@ const CategoryPage = ({ categories, title }) => (
 			</ul>
 		</div>
 	</Layout>
-)
+);
 
 CategoryPage.propTypes = {
 	categories: PropTypes.arrayOf(

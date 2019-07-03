@@ -11,31 +11,32 @@ import {
   styledMain,
 } from './layout-styles';
 
-const Layout = ( { children, isPost, location, title } ) => {
-  return (
-    <div css={ layoutWrap }>
-      <GlobalStyles />
-      <Header
-        location={ location }
-        title={ title }
-      />
-      <main css={ isPost ? postMain: styledMain }>
-        { children }
-      </main>
-      <Footer />
-    </div>
-  )
-};
+const Layout = ( { children, isPost, location, title } ) => (
+  <div css={ layoutWrap }>
+    <GlobalStyles />
+    <Header
+      location={ location }
+      title={ title }
+    />
+    <main css={ isPost ? postMain: styledMain }>
+      { children }
+    </main>
+    <Footer />
+  </div>
+);
 
 Layout.propTypes = {
   children: PropTypes.any,
   isPost: PropTypes.bool,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object,
   title: PropTypes.string.isRequired,
 };
 
 Layout.defaultProps = {
   isPost: false,
+  location: {
+    pathname: '',
+  },
 };
 
 export default React.memo(Layout);

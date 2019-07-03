@@ -20,7 +20,7 @@ import headerImage from './benjamin-elliott-vc9u77c0LO4-unsplash.jpg';
 const NotFoundPage = ( { posts } ) => {
   const title = '404: Not Found';
   return (
-    <Layout location={ location } title={ title }>
+    <Layout title={ title }>
       <SEO title={ title } />
       <section css={css`
         ${ categoryImage }
