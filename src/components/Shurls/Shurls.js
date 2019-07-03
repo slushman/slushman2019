@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ShurlsList from './ShurlsList';
-import NativeShare from './NativeShare';
 import { shurlWrap } from './shurls-styles';
 
 import {
@@ -15,33 +14,18 @@ const Shurls = ( { location, postNode, rounded } ) => {
 	const currentMedia = postNode.media ? postNode.media : null;
 	const currentUrl = location.href;
 	const currentTitle = escape( postNode.title );
-	let output;
-
-	if ( navigator.share ) {
-		output = (
-			<NativeShare
-				shareText={ currentExcerpt }
-				shareTitle={ currentTitle }
-				shareUrl={ currentUrl }
-			/>
-		);
-	} else {
-		output = (
-			<ShurlsList
-				shareMedia={ currentMedia }
-				shareText={ currentExcerpt }
-				shareTitle={ currentTitle }
-				shareUrl={ currentUrl }
-				rounded={ rounded }
-			/>
-		);
-	}
 
 	return (
 		<section css={ shurlWrap }>
 			<h2 css={ shurlHeader }>Share this post!</h2>
 			<ul css={ shurlList }>
-				{ output }
+				<ShurlsList
+					shareMedia={ currentMedia }
+					shareText={ currentExcerpt }
+					shareTitle={ currentTitle }
+					shareUrl={ currentUrl }
+					rounded={ rounded }
+				/>
 			</ul>
 		</section>
 	);

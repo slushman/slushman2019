@@ -69,4 +69,4 @@ SEO.defaultProps = {
   meta: [],
 };
 
-export default React.memo(SEO);
+export default SEO;

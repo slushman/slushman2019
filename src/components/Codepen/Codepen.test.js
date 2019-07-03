@@ -14,7 +14,6 @@ const factory = shallowFactory(Codepen, defaultProps);
 describe('<Codepen />', () => {
   it('renders without crashing', () => {
     const wrapper = factory();
-
     const foundIframe = wrapper.find('Styled(iframe)');
     const iframeSrc = foundIframe.prop('src');
     const foundFigcaption = wrapper.find('figcaption');
