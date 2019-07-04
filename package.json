@@ -54,6 +54,7 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "prettier": "^1.14.2",
@@ -70,13 +71,15 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "jest",
-    "test:watch": "yarn test --watch",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "start": "npm run develop",
     "build": "gatsby build",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "deploy": "gh-pages -d public",
+    "deploy:github": "npm run build && node ./scripts/deploy-github",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "start": "npm run develop",
+    "test": "jest",
+    "test:watch": "yarn test --watch"
   }
 }
