@@ -15,11 +15,13 @@ describe('<Header />', () => {
 		const wrapper = factory();
 		const foundP = wrapper.find('p');
 		const foundTitle = foundP.find('Title');
+		const foundMenu = wrapper.find('MainMenu');
 
 		expect(wrapper.exists()).toBe(true);
 		expect(foundP.exists()).toBe(true);
 		expect(foundTitle.exists()).toBe(true);
 		expect(foundTitle.prop('title')).toBe(defaultProps.title);
+		expect(foundMenu.exists()).toBe(true);
 	});
 
 	describe('when given pathname equals website root', () => {
